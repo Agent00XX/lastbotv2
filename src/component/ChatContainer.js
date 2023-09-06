@@ -144,7 +144,7 @@ export const ChatContainer = () => {
         if (!widgetInfo) {
             getWidget()
         }
-        if (!currentUserId) {
+        if (!currentUserId && sessionId && uuid) {
             getMessageThreads(sessionId, uuid)
         }
     }, [widgetInfo, currentUserId, sessionId, uuid])

@@ -8,12 +8,13 @@ export const ChatHeader = ({ setShowChat, showChat, setIsFullScreen, isFullScree
         <>
             {!showChat && window.innerWidth < 769 ? <div className='chatIconFloat' onClick={() => {
                 setShowChat(!showChat)
-            }}>
-                <img src={"./assets/Images/Chat-icon.png"} alt="user-avatar" />
+            }}> 
+            {/* https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png */}
+                <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Chat-icon.png"} alt="user-avatar" />
             </div> :
                 <div className="chat-header-wrapper">
                     <div>
-                        <img src={isHuman ? "./assets/Images/HumanAvatar.png" : "./assets/Images/Logo.png"} className="user-avatar" alt="user-avatar" />
+                        <img src={isHuman ? "https://agent00xx.github.io/lastbotv2/assets/Images/HumanAvatar.png" : "https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} className="user-avatar" alt="user-avatar" />
                         <span className='headertext'>{isHuman ? "Mari from AINA" : widgetInfo?.name}</span>
                         {!isHuman && <img src={"./assets/Images/bot.png"} alt="user-avatar" style={{ marginLeft: 8 }} />}
                     </div>
