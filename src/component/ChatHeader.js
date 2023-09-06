@@ -16,11 +16,11 @@ export const ChatHeader = ({ setShowChat, showChat, setIsFullScreen, isFullScree
                     <div>
                         <img src={isHuman ? "https://agent00xx.github.io/lastbotv2/assets/Images/HumanAvatar.png" : "https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} className="user-avatar" alt="user-avatar" />
                         <span className='headertext'>{isHuman ? "Mari from AINA" : widgetInfo?.name}</span>
-                        {!isHuman && <img src={"./assets/Images/bot.png"} alt="user-avatar" style={{ marginLeft: 8 }} />}
+                        {!isHuman && <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/bot.png"} alt="user-avatar" style={{ marginLeft: 8 }} />}
                     </div>
                     <div >
                         <span className='svg-icon mr-2 '>
-                            <img src={"./assets/Images/backIcon.png"} alt="user-avatar" style={{ marginLeft: 8 }} />
+                            <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/backIcon.png"} alt="user-avatar" style={{ marginLeft: 8 }} />
                         </span>
                         {window.innerWidth > 769 && <span className='svg-icon' onClick={() => setIsFullScreen(prev => !prev)}>
 
@@ -31,7 +31,7 @@ export const ChatHeader = ({ setShowChat, showChat, setIsFullScreen, isFullScree
                             setShowChat(!showChat)
                         }}>
 
-                            {showChat ? <img src={"./assets/Images/backIcon.svg"} alt="user-avatar" style={{ marginLeft: 8 }} /> : <ChevronUp />}
+                            {showChat ? <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/backIcon.svg"} alt="user-avatar" style={{ marginLeft: 8 }} /> : <ChevronUp />}
                         </span>
                     </div>
                 </div>}

@@ -107,14 +107,14 @@ export const ChatMessasges = ({
 									<p className="labelForNewJoined">{label}</p>
 								</div> : <>
 									<div className=" sender-conataoner">
-										<img src={"./assets/Images/Logo.png"} alt="user-avatar" className="user-avatar" />
+										<img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="user-avatar" />
 										<p className={`chat-bubble   ${getClassName(role)} `}>
 											{contents}
 										</p>
 									</div>
 									{metadata?.data?.length > 0 && <div className="sender-conataoner">
 									{/* {index === (message?.length - 1) && metadata?.data?.length > 0 && <div className="sender-conataoner"> */}
-										<img style={{ visibility: 'hidden' }} src={"./assets/Images/Logo.png"} alt="user-avatar" className="user-avatar" />
+										<img style={{ visibility: 'hidden' }} src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="user-avatar" />
 										{metadata.type === 'options' && <div className="wrapperOfBotInitials">
 
 											{metadata.data.map(s => {
@@ -195,7 +195,7 @@ export const ChatMessasges = ({
 						<div className="convoByBotWrapper">
 							<p className="askQue">
 								<img
-									src={"./assets/Images/Askanythinginany.png"}
+									src={"https://agent00xx.github.io/lastbotv2/assets/Images/Askanythinginany.png"}
 									alt="user-avatar"
 									width={"274px"}
 								/>

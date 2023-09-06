@@ -18,7 +18,7 @@ export const SingleImg = ({ setShowImagePage, singleImageData }) => {
 					<div>
 						<img
 							style={{ cursor: "pointer" }}
-							src={"./assets/Images/back__Icon.png"}
+							src={"https://agent00xx.github.io/lastbotv2/assets/Images/back__Icon.png"}
 							className="back-arrow"
 							alt="back-arrow"
 							onClick={() => {
@@ -30,7 +30,7 @@ export const SingleImg = ({ setShowImagePage, singleImageData }) => {
 					<div>
 						<span className="svg-icon mr-2 ">
 							<img
-								src={"./assets/Images/upload.png"}
+								src={"https://agent00xx.github.io/lastbotv2/assets/Images/upload.png"}
 								alt="user-avatar"
 								style={{ marginLeft: 8 }}
 							/>
@@ -42,7 +42,7 @@ export const SingleImg = ({ setShowImagePage, singleImageData }) => {
 							}}
 						>
 							<img
-								src={"./assets/Images/message.png"}
+								src={"https://agent00xx.github.io/lastbotv2/assets/Images/message.png"}
 								alt="user-avatar"
 								style={{ marginLeft: 8 }}
 							/>
@@ -50,7 +50,7 @@ export const SingleImg = ({ setShowImagePage, singleImageData }) => {
 					</div>
 				</div>
 				<div className={"image-page-container"}>
-					{/* <img src={"./assets/Images/chatimg.png"} /> */}
+					{/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/chatimg.png"} /> */}
 
 					{/* <img src={singleImageData.img} alt="chatImage" /> */}
 

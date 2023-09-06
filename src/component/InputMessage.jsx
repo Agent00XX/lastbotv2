@@ -25,7 +25,7 @@ export const InputMessage = ({ handleAddMessage, inputMessage, setInputMessage }
           value={inputMessage}
         />
         <button type="submit" className="sendButton">
-          <img src={"./assets/Images/send.png"} alt="user-avatar" />
+          <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/send.png"} alt="user-avatar" />
         </button>
       </form>
     </div>

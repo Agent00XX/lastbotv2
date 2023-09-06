@@ -28,7 +28,7 @@ export const ChatPageForProduct = ({ setShowChat }) => {
           <span className="svg-icon" onClick={() => {
             setShowChat(false)
           }}>
-            <img src={"./assets/Images/x-close.png"} alt="user-avatar" style={{ marginLeft: 8 }} />
+            <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/x-close.png"} alt="user-avatar" style={{ marginLeft: 8 }} />
           </span>
         </div>
       </div>
@@ -96,7 +96,7 @@ export const ChatPageForProduct = ({ setShowChat }) => {
           value={message}
         />
         <button type="submit" className="sendButton">
-          <img src={"./assets/Images/send.png"} alt="user-avatar" />
+          <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/send.png"} alt="user-avatar" />
         </button>
       </form>
     </div>

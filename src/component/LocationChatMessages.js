@@ -186,7 +186,7 @@ export const LocationChatMessages = ({
 						<div className="convoByBotWrapper">
 							<p className="askQue">
 								<img
-									src={"./assets/Images/Askanythinginany.png"}
+									src={"https://agent00xx.github.io/lastbotv2/assets/Images/Askanythinginany.png"}
 									alt="user-avatar"
 									width={"274px"}
 								/>

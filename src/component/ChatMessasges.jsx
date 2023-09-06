@@ -104,7 +104,7 @@ export const ChatMessasges = ({ isFullScreen }) => {
       {/* </Row> */}
       {/* </div> */}
 
-      {/* <img src={"./assets/Images/wax.jpg"} alt="user-avatar" /> */}
+      {/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/wax.jpg"} alt="user-avatar" /> */}
       <div
         //   ref={ref}
         className="to-scroll-div"
@@ -162,7 +162,7 @@ export const ChatMessasges = ({ isFullScreen }) => {
     //       ))}
     //     </Row>
     //   </Container>
-    //   {/* <img src={"./assets/Images/wax.jpg"} alt="user-avatar" /> */}
+    //   {/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/wax.jpg"} alt="user-avatar" /> */}
     //   <div
     //     //   ref={ref}
     //     className="to-scroll-div"
