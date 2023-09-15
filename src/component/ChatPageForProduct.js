@@ -11,21 +11,21 @@ export const ChatPageForProduct = ({ setShowChat }) => {
 
   const getClassName = (type) => {
     if (type === "user") {
-      return "chat-bubble-sender";
+      return "lcb_chat-bubble-sender";
     } else {
 
-      return "chat-bubble-reciever";
+      return "lcb_chat-bubble-reciever";
     }
   };
 
   return (
-    <div className='imageOpenerWrapper'>
-      <div className="chat-header-wrapper imageOpnerConatiner">
+    <div className='lcb_imageOpenerWrapper'>
+      <div className="lcb_chat-header-wrapper lcb_imageOpnerConatiner">
         <div>
-          <span className='headertext'>Tyyni-kitchen chat</span>
+          <span className='lcb_headertext'>Tyyni-kitchen chat</span>
         </div>
         <div >
-          <span className="svg-icon" onClick={() => {
+          <span className="lcb_svg-icon" onClick={() => {
             setShowChat(false)
           }}>
             <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/x-close.png"} alt="user-avatar" style={{ marginLeft: 8 }} />
@@ -35,7 +35,7 @@ export const ChatPageForProduct = ({ setShowChat }) => {
 
       <div
         className={
-          "message-container"
+          "lcb_message-container"
         }
       >
 
@@ -43,9 +43,9 @@ export const ChatPageForProduct = ({ setShowChat }) => {
           <>
             {type === "user" ? (
               <>
-                <div className=" sender-conataoner">
-                  <img src={img} alt="user-avatar" className="user-avatar" />
-                  <p className={`chat-bubble   ${getClassName(type)} `}>
+                <div className=" lcb_sender-conataoner">
+                  <img src={img} alt="user-avatar" className="lcb_user-avatar" />
+                  <p className={`lcb_chat-bubble   ${getClassName(type)} `}>
                     {message}
                   </p>
                 </div>
@@ -64,7 +64,7 @@ export const ChatPageForProduct = ({ setShowChat }) => {
             ) : (
               <div
                 key={index}
-                className={`chat-bubble ${getClassName(type)}`}
+                className={`lcb_chat-bubble ${getClassName(type)}`}
               // onClick={() => selectServiceHandler(message)}
               >
                 <p>{message}</p>
@@ -74,7 +74,7 @@ export const ChatPageForProduct = ({ setShowChat }) => {
         ))}
       </div>
 
-      <div className="input-message">
+      <div className="lcb_input-message">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -83,10 +83,10 @@ export const ChatPageForProduct = ({ setShowChat }) => {
             setMessage("");
           }
         }}
-        className="inputText"
+        className="lcb_inputText"
         >
         <input
-          className="inputTextField"
+          className="lcb_inputTextField"
           type="text"
           placeholder="Ask anything..."
           onChange={(e) => {
@@ -95,7 +95,7 @@ export const ChatPageForProduct = ({ setShowChat }) => {
           name="message"
           value={message}
         />
-        <button type="submit" className="sendButton">
+        <button type="submit" className="lcb_sendButton">
           <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/send.png"} alt="user-avatar" />
         </button>
       </form>

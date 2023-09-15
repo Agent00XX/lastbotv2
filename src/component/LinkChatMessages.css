@@ -1,11 +1,11 @@
-.linkImage {
+.lbt_bot .lcb_linkImage {
 	width: 235px;
 	height: 125px;
 	border-radius: 8px;
   margin-bottom: 1rem;
 }
 
-.linkMessage {
+.lbt_bot .lcb_linkMessage {
 	font-weight: bold;
 	text-decoration: underline;
 	

@@ -51,27 +51,27 @@ export const ChatMessasges = ({ isFullScreen }) => {
   ];
   const getClassName = (type) => {
     if (type === "user") {
-      return "chat-bubble-sender";
+      return "lcb_chat-bubble-sender";
     }
-    return "chat-bubble-reciever";
+    return "lcb_chat-bubble-reciever";
   };
   return (
     <div
       className={
-        isFullScreen ? "message-container-fullscreen" : "message-container"
+        isFullScreen ? "lcb_message-container-fullscreen" : "lcb_message-container"
       }
     >
       {messages.map(({ message, type, img }, index) => (
         <>
           {type === "user" ? (
-            <div className="d-block sender-conataoner">
-              <img src={img} alt="user-avatar" className="user-avatar" />
-              <p className={`chat-bubble p-3    ${getClassName(type)} `}>
+            <div className="lcb_d-block sender-conataoner">
+              <img src={img} alt="user-avatar" className="lcb_user-avatar" />
+              <p className={`lcb_chat-bubble p-3    ${getClassName(type)} `}>
                 {message}
               </p>
             </div>
           ) : (
-            <div key={index} className={`chat-bubble ${getClassName(type)}`}>
+            <div key={index} className={`lcb_chat-bubble ${getClassName(type)}`}>
               <p>{message}</p>
             </div>
           )}
@@ -89,14 +89,14 @@ export const ChatMessasges = ({ isFullScreen }) => {
               width: "220px",
               height: "229px",
             }}
-            className="card"
+            className="lcb_card"
           >
             <Card.Img variant="top" src={cur.img} />
             <Card.Body>
-              <Card.Title className="single-chat-tittle">
+              <Card.Title className="lcb_single-chat-tittle">
                 {cur.title}
               </Card.Title>
-              <Card.Text className="single-chat-text">{cur.text}</Card.Text>
+              <Card.Text className="lcb_single-chat-text">{cur.text}</Card.Text>
             </Card.Body>
           </Card>
         ))}
@@ -107,7 +107,7 @@ export const ChatMessasges = ({ isFullScreen }) => {
       {/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/wax.jpg"} alt="user-avatar" /> */}
       <div
         //   ref={ref}
-        className="to-scroll-div"
+        className="lcb_to-scroll-div"
       />
     </div>
     // <div
@@ -118,8 +118,8 @@ export const ChatMessasges = ({ isFullScreen }) => {
     //   {messages.map(({ message, type, img }, index) => (
     //     <>
     //       {type === "user" ? (
-    //         <div className="d-block ">
-    //           <img src={img} alt="user-avatar" className="user-avatar" />
+    //         <div className="lcb_d-block ">
+    //           <img src={img} alt="user-avatar" className="lcb_user-avatar" />
     //           <p className={`chat-bubble p-3    ${getClassName(type)} `}>
     //             {message}
     //           </p>
@@ -140,13 +140,13 @@ export const ChatMessasges = ({ isFullScreen }) => {
     //     <Row
     //       // xs={1}
     //       // md={2}
-    //       className=" overflow-auto  d-flex"
+    //       className="lcb_ overflow-auto  d-flex"
     //       // style={{ display: "contents" }}
     //     >
     //       {/* {Array.from({ length: 4 }).map((_, idx) => ( */}
     //       {[1, 2].map((cur) => (
     //         <>
-    //           <Col className=" w-100  ">
+    //           <Col className="lcb_ w-100  ">
     //             <Image
     //               src="./assets/Images/wax.jpg"
     //               fluid
@@ -165,7 +165,7 @@ export const ChatMessasges = ({ isFullScreen }) => {
     //   {/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/wax.jpg"} alt="user-avatar" /> */}
     //   <div
     //     //   ref={ref}
-    //     className="to-scroll-div"
+    //     className="lcb_to-scroll-div"
     //   />
     // </div>
   );

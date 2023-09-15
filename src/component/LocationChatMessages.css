@@ -1,11 +1,11 @@
-.locationImage {
+.lbt_bot .lcb_locationImage {
 	width: 178px;
 	height: 190px;
 	border-radius: 8px;
 	margin-bottom: 1rem;
 }
 
-.linkMessage {
+.lbt_bot .lcb_linkMessage {
 	font-weight: bold;
 	text-decoration: underline;
 }

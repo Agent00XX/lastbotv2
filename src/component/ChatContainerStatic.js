@@ -136,7 +136,7 @@ export const ChatContainerStatic = () => {
 
 
     return (
-        <div className={showChat ? isFullScreen ? "chat-container-desktopOpenView-fullscreen" : window.innerWidth > 769 ? "chat-container-desktopOpenView" : "chat-container" : window.innerWidth > 769 ? "chat-container-desktop" : "chatContainer"} >
+        <div className={showChat ? isFullScreen ? "lcb_chat-container-desktopOpenView-fullscreen" : window.innerWidth > 769 ? "lcb_chat-container-desktopOpenView" : "lcb_chat-container" : window.innerWidth > 769 ? "lcb_chat-container-desktop" : "lcb_chatContainer"} >
             <ChatHeader setShowChat={setShowChat} showChat={showChat} isFullScreen={isFullScreen} setIsFullScreen={setIsFullScreen} isHuman={isHuman} widgetInfo={widgetInfo} />
             {/* <SingleImg /> */}
             {showChat && <>

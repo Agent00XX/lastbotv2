@@ -77,9 +77,9 @@ export const ChatMessasges = ({
 
 	const getClassName = (type) => {
 		if (type === "assistant" || type === "human") {
-			return "chat-bubble-sender";
+			return "lcb_chat-bubble-sender";
 		} else {
-			return "chat-bubble-reciever";
+			return "lcb_chat-bubble-reciever";
 		}
 	};
 
@@ -95,33 +95,33 @@ export const ChatMessasges = ({
 				<div
 					className={
 						// isFullScreen ? "message-container-fullscreen" : "message-container"
-						"message-container"
+						"lcb_message-container"
 					}
 					ref={scrollRef}
 				>
 					{message.map(({ humanJoined, label, contents, role, metadata }, index) => (
 						<>
 							{role === "assistant" || role === 'human' ? (
-								role === 'human' && humanJoined ? <div className="humanJoinedContainer">
-									<p className="lineForNewJoined"></p>
-									<p className="labelForNewJoined">{label}</p>
+								role === 'human' && humanJoined ? <div className="lcb_humanJoinedContainer">
+									<p className="lcb_lineForNewJoined"></p>
+									<p className="lcb_labelForNewJoined">{label}</p>
 								</div> : <>
-									<div className=" sender-conataoner">
-										<img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="user-avatar" />
-										<p className={`chat-bubble   ${getClassName(role)} `}>
+									<div className="lcb_sender-conataoner">
+										<img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" />
+										<p className={`lcb_chat-bubble   ${getClassName(role)} `}>
 											{contents}
 										</p>
 									</div>
-									{metadata?.data?.length > 0 && <div className="sender-conataoner">
-									{/* {index === (message?.length - 1) && metadata?.data?.length > 0 && <div className="sender-conataoner"> */}
-										<img style={{ visibility: 'hidden' }} src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="user-avatar" />
-										{metadata.type === 'options' && <div className="wrapperOfBotInitials">
+									{metadata?.data?.length > 0 && <div className="lcb_sender-conataoner">
+									{/* {index === (message?.length - 1) && metadata?.data?.length > 0 && <div className="lcb_sender-conataoner"> */}
+										<img style={{ visibility: 'hidden' }} src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" />
+										{metadata.type === 'options' && <div className="lcb_wrapperOfBotInitials">
 
 											{metadata.data.map(s => {
-												return <div className="botInitialMessage" onClick={() => setInputMessage(s)}>{s}</div>
+												return <div className="lcb_botInitialMessage" onClick={() => setInputMessage(s)}>{s}</div>
 											})}
 										</div>}
-										{metadata.type === 'products' && <div className="wrapperOfBotInitials">
+										{metadata.type === 'products' && <div className="lcb_wrapperOfBotInitials">
 											{metadata.data.length > 0 && (
 												<div
 													class="image-container chat-bubble"
@@ -137,20 +137,20 @@ export const ChatMessasges = ({
 															}}
 														>
 															<img src={curr.images[0].url} alt={curr.images[0].alt} />
-															<h6 className="img-title">{curr.name}</h6>
-															<h6 className="img-text">{curr.short_description}</h6>
+															<h6 className="lcb_img-title">{curr.name}</h6>
+															<h6 className="lcb_img-text">{curr.short_description}</h6>
 														</div>
 
 													))}
 												</div>
 											)}
 											{/* {metadata.data.map(s => {
-												return <div className="botInitialMessage" onClick={() => setInputMessage(s)}>{s}</div>
+												return <div className="lcb_botInitialMessage" onClick={() => setInputMessage(s)}>{s}</div>
 											})} */}
 										</div>}
-										{metadata.type === 'links' && <div className="wrapperOfBotInitials">
+										{metadata.type === 'links' && <div className="lcb_wrapperOfBotInitials">
 											{metadata.data.map(s => {
-												return <a className="botLinks" target={s.target} href={s.url} >{s.title}</a>
+												return <a className="lcb_botLinks" target={s.target} href={s.url} >{s.title}</a>
 											})}
 										</div>}
 									</div>}
@@ -170,8 +170,8 @@ export const ChatMessasges = ({
 														}}
 													>
 														<img src={cur.img} alt="Image 1" />
-														<h6 className="img-title">{cur.title}</h6>
-														<h6 className="img-text">{cur.text}</h6>
+														<h6 className="lcb_img-title">{cur.title}</h6>
+														<h6 className="lcb_img-text">{cur.text}</h6>
 													</div>
 												</>
 											))}
@@ -181,7 +181,7 @@ export const ChatMessasges = ({
 							) : (
 								<div
 									key={index}
-									className={`chat-bubble ${getClassName(role)}`}
+									className={`lcb_chat-bubble ${getClassName(role)}`}
 								// onClick={() => selectServiceHandler(message)}
 								>
 									<p>{contents}</p>
@@ -192,8 +192,8 @@ export const ChatMessasges = ({
 
 					{/* Initial ask by BOT */}
 					{/* {message.length === 1 && (
-						<div className="convoByBotWrapper">
-							<p className="askQue">
+						<div className="lcb_convoByBotWrapper">
+							<p className="lcb_askQue">
 								<img
 									src={"https://agent00xx.github.io/lastbotv2/assets/Images/Askanythinginany.png"}
 									alt="user-avatar"
@@ -202,7 +202,7 @@ export const ChatMessasges = ({
 							</p>
 							{initialAskByBot.map((s) => (
 								<p
-									className="botInitialMessage"
+									className="lcb_botInitialMessage"
 									key={s.id}
 									onClick={() => {
 										setMessage((prev) => [
@@ -244,7 +244,7 @@ export const ChatMessasges = ({
 
 					{/* <div
 						  
-						className="to-scroll-div"
+						className="lcb_to-scroll-div"
 					/> */}
 				</div>
 			)}

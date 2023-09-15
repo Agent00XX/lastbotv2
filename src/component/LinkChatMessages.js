@@ -57,11 +57,11 @@ export const LinkChatMessages = ({
 
 	const getClassName = (type, isLink) => {
 		if (type === "user" && isLink) {
-			return "chat-bubble-sender linkMessage";
+			return "lcb_chat-bubble-sender lcb_linkMessage";
 		} else if (type === "user" && !isLink) {
-			return "chat-bubble-sender";
+			return "lcb_chat-bubble-sender";
 		} else {
-			return "chat-bubble-reciever";
+			return "lcb_chat-bubble-reciever";
 		}
 	};
 
@@ -98,7 +98,7 @@ export const LinkChatMessages = ({
 			{!showImagePage && (
 				<div
 					className={
-						isFullScreen ? "message-container-fullscreen" : "message-container"
+						isFullScreen ? "lcb_message-container-fullscreen" : "lcb_message-container"
 					}
 				>
 					{message.map(
@@ -118,18 +118,18 @@ export const LinkChatMessages = ({
 							<>
 								{type === "user" ? (
 									<>
-										<div className=" sender-conataoner">
+										<div className="lcb_ sender-conataoner">
 											<div>
 												<img
 													src={img}
 													alt="user-avatar"
-													className="user-avatar"
+													className="lcb_user-avatar"
 												/>
 											</div>
 
 											<div>
 												<p
-													className={`chat-bubble   ${getClassName(
+													className={`lcb_chat-bubble   ${getClassName(
 														type,
 														isLink
 													)} `}
@@ -141,7 +141,7 @@ export const LinkChatMessages = ({
 													<img
 														src={linkImage}
 														alt="linkImage"
-														className="linkImage"
+														className="lcb_linkImage"
 													/>
 												)}
 											</div>
@@ -162,8 +162,8 @@ export const LinkChatMessages = ({
 															}}
 														>
 															<img src={cur.img} alt="Image 1" />
-															<h6 className="img-title">{cur.title}</h6>
-															<h6 className="img-text">{cur.text}</h6>
+															<h6 className="lcb_img-title">{cur.title}</h6>
+															<h6 className="lcb_img-text">{cur.text}</h6>
 														</div>
 													</>
 												))}
@@ -173,7 +173,7 @@ export const LinkChatMessages = ({
 								) : (
 									<div
 										key={index}
-										className={`chat-bubble ${getClassName(type)}`}
+										className={`lcb_chat-bubble ${getClassName(type)}`}
 										// onClick={() => selectServiceHandler(message)}
 									>
 										<p>{message}</p>
@@ -184,8 +184,8 @@ export const LinkChatMessages = ({
 					)}
 
 					{message.length === 1 && (
-						<div className="convoByBotWrapper">
-							<p className="askQue">
+						<div className="lcb_convoByBotWrapper">
+							<p className="lcb_askQue">
 								<img
 									src={"https://agent00xx.github.io/lastbotv2/assets/Images/Askanythinginany.png"}
 									alt="user-avatar"
@@ -194,7 +194,7 @@ export const LinkChatMessages = ({
 							</p>
 							{initialAskByBot.map((s) => (
 								<p
-									className="botInitialMessage"
+									className="lcb_botInitialMessage"
 									key={s.id}
 									onClick={() => {
 										setMessage((prev) => [
@@ -228,7 +228,7 @@ export const LinkChatMessages = ({
 
 					<div
 						//   ref={ref}
-						className="to-scroll-div"
+						className="lcb_to-scroll-div"
 					/>
 				</div>
 			)}

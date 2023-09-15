@@ -89,9 +89,9 @@ export const ChatMessasgesStatic = ({
 
 	const getClassName = (type) => {
 		if (type === "assistant" || type === "human") {
-			return "chat-bubble-sender";
+			return "lcb_chat-bubble-sender";
 		} else {
-			return "chat-bubble-reciever";
+			return "lcb_chat-bubble-reciever";
 		}
 	};
 
@@ -107,50 +107,50 @@ export const ChatMessasgesStatic = ({
 				<div
 					className={
 						// isFullScreen ? "message-container-fullscreen" : "message-container"
-						"message-container"
+						"lcb_message-container"
 					}
 					ref={scrollRef}
 				>
 					{message.length > 0 && message.map(({ id,humanJoined, label, contents, role, metadata, images  = []}, index) => (
 						<Fragment key={id}>
 							{role === "assistant" || role === 'human' ? (
-								role === 'human' && humanJoined ? <div className="humanJoinedContainer">
-									<p className="lineForNewJoined"></p>
-									<p className="labelForNewJoined">{label}</p>
+								role === 'human' && humanJoined ? <div className="lcb_humanJoinedContainer">
+									<p className="lcb_lineForNewJoined"></p>
+									<p className="lcb_labelForNewJoined">{label}</p>
 								</div> : <>
-									<div className=" sender-conataoner">
-										<img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="user-avatar" />
-										<p className={`chat-bubble   ${getClassName(role)} `}>
+									<div className="lcb_ sender-conataoner">
+										<img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" />
+										<p className={`lcb_chat-bubble   ${getClassName(role)} `}>
 											{contents}
 										</p>
 									</div>
-									{/* {metadata && metadata.data &&  <div className="sender-conataoner">
-										<img style={{visibility:'hidden'}} src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="user-avatar" />
-										<div className="wrapperOfBotInitials">
+									{/* {metadata && metadata.data &&  <div className="lcb_sender-conataoner">
+										<img style={{visibility:'hidden'}} src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" />
+										<div className="lcb_wrapperOfBotInitials">
 
 											{metadata.data.map(s => {
-												return <div className="botInitialMessage" onClick={() => setInputMessage(s)}>{s}</div>
+												return <div className="lcb_botInitialMessage" onClick={() => setInputMessage(s)}>{s}</div>
 											})}
 										</div>
 									</div>} */}
 									{/* Images sended by BOT */}
 									{images.length > 0 && (
 										<div
-											class="image-container chat-bubble"
+											class="lcb_image-container lcb_chat-bubble"
 											style={{ marginBottom: 16 }}
 										>
 											{images.map((cur, idx) => (
 												<>
 													<div
-														class="image-wrapper"
+														class="lcb_image-wrapper"
 														onClick={() => {
 															setShowImagePage(cur.title);
 															setsingleImageData(cur);
 														}}
 													>
 														<img src={cur.img} alt="Image 1" />
-														<h6 className="img-title">{cur.title}</h6>
-														<h6 className="img-text">{cur.text}</h6>
+														<h6 className="lcb_img-title">{cur.title}</h6>
+														<h6 className="lcb_img-text">{cur.text}</h6>
 													</div>
 												</>
 											))}
@@ -160,7 +160,7 @@ export const ChatMessasgesStatic = ({
 							) : (
 								<div
 									key={index}
-									className={`chat-bubble ${getClassName(role)}`}
+									className={`lcb_chat-bubble ${getClassName(role)}`}
 								// onClick={() => selectServiceHandler(message)}
 								>
 									<p>{contents}</p>
@@ -171,8 +171,8 @@ export const ChatMessasgesStatic = ({
 
 					{/* Initial ask by BOT */}
 					{message.length === 1 && (
-						<div className="convoByBotWrapper">
-							<p className="askQue">
+						<div className="lcb_convoByBotWrapper">
+							<p className="lcb_askQue">
 								<img
 									src={"https://agent00xx.github.io/lastbotv2/assets/Images/Askanythinginany.png"}
 									alt="user-avatar"
@@ -181,7 +181,7 @@ export const ChatMessasgesStatic = ({
 							</p>
 							{initialAskByBot.map((s) => (
 								<p
-									className="botInitialMessage"
+									className="lcb_botInitialMessage"
 									key={s.id}
 									onClick={() => {
 										setMessage((prev) => [
@@ -223,7 +223,7 @@ export const ChatMessasgesStatic = ({
 
 					{/* <div
 						  
-						className="to-scroll-div"
+						className="lcb_to-scroll-div"
 					/> */}
 				</div>
 			)}

@@ -12,23 +12,23 @@ export const SingleImg = ({ setShowImagePage, singleImageData }) => {
 	let imageData = singleImageData.images.map(s => s.url)
 
 	return (
-		<div className="imageOpenerWrapper">
+		<div className="lcb_imageOpenerWrapper">
 			<>
-				<div className="chat-header-wrapper imageOpnerConatiner">
+				<div className="lcb_chat-header-wrapper lcb_imageOpnerConatiner">
 					<div>
 						<img
 							style={{ cursor: "pointer" }}
 							src={"https://agent00xx.github.io/lastbotv2/assets/Images/back__Icon.png"}
-							className="back-arrow"
+							className="lcb_back-arrow"
 							alt="back-arrow"
 							onClick={() => {
 								setShowImagePage("");
 							}}
 						/>
-						<span className="headertext">{singleImageData.name}</span>
+						<span className="lcb_headertext">{singleImageData.name}</span>
 					</div>
 					<div>
-						<span className="svg-icon mr-2 ">
+						<span className="lcb_svg-icon lcb_mr-2 ">
 							<img
 								src={"https://agent00xx.github.io/lastbotv2/assets/Images/upload.png"}
 								alt="user-avatar"
@@ -36,7 +36,7 @@ export const SingleImg = ({ setShowImagePage, singleImageData }) => {
 							/>
 						</span>
 						<span
-							className="svg-icon"
+							className="lcb_svg-icon"
 							onClick={() => {
 								setShowChat(!showChat);
 							}}
@@ -49,7 +49,7 @@ export const SingleImg = ({ setShowImagePage, singleImageData }) => {
 						</span>
 					</div>
 				</div>
-				<div className={"image-page-container"}>
+				<div className={"lcb_image-page-container"}>
 					{/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/chatimg.png"} /> */}
 
 					{/* <img src={singleImageData.img} alt="chatImage" /> */}
@@ -75,51 +75,51 @@ export const SingleImg = ({ setShowImagePage, singleImageData }) => {
 						))}
 					</Carousel>
 
-					{/* <span className="img-title">Effortless Elegance </span> */}
-					<span className="img-title">{singleImageData.name}</span>
+					{/* <span className="lcb_img-title">Effortless Elegance </span> */}
+					<span className="lcb_img-title">{singleImageData.name}</span>
 
-					{/* <p className="single-img-text">
+					{/* <p className="lcb_single-img-text">
 						The minimalist design is brought to life with Aura and Simple door
 						models in white and Tikkurila Ajpuu V484 tones.
-						<span className="readMoreInImagePage">Read more</span>
+						<span className="lcb_readMoreInImagePage">Read more</span>
 					</p> */}
 
-					<p className="single-img-text">
+					<p className="lcb_single-img-text">
 						{showFullCaption
 							? singleImageData.description
 							: singleImageData.description.slice(0, captionTextLength)}
 						<span
-							className="readMoreInImagePage"
+							className="lcb_readMoreInImagePage"
 							onClick={() => setShowFullCaption((prev) => !prev)}
 						>
 							{showFullCaption ? " Read Less" : " ...Read more"}
 						</span>
 					</p>
 
-					{/* {(singleImageData.product_options && singleImageData.product_options.options.length > 0) && <div className="materials">
-						<div className="material-title">Product Options</div>
-						<div className="wrapperOfProductOptions">
+					{/* {(singleImageData.product_options && singleImageData.product_options.options.length > 0) && <div className="lcb_materials">
+						<div className="lcb_material-title">Product Options</div>
+						<div className="lcb_wrapperOfProductOptions">
 
 							{singleImageData.product_options.options.map(s => {
-								return <div className="roundForOptions" style={{ background: s }}></div>
+								return <div className="lcb_roundForOptions" style={{ background: s }}></div>
 							})}
 						</div>
 					</div>} */}
-					{/* <div className="materialContainer">
+					{/* <div className="lcb_materialContainer">
 							<img src={"assets/Images/box1.png"} alt="Image 1" />
 							<img src={"assets/Images/box.png"} alt="Image 1" />
 							<img src={"assets/Images/Rectangle20.png"} alt="Image 1" />
 						</div> */}
-					<span className="img-title" style={{ margin: "16px 0" }}>{singleImageData.price}</span>
-					<button className="consultation">
+					<span className="lcb_img-title" style={{ margin: "16px 0" }}>{singleImageData.price}</span>
+					<button className="lcb_consultation">
 						Purchase
 					</button>
-					{/* <div className="delivery-estimate">
-						<span className="delivery-estimate-title">
+					{/* <div className="lcb_delivery-estimate">
+						<span className="lcb_delivery-estimate-title">
 							{singleImageData.deliveryEstimateTitle}
 						</span>
 						<br />
-						<span className="delivery-estimate-content">
+						<span className="lcb_delivery-estimate-content">
 							{singleImageData.deliveryEstimateContent}
 						</span>
 					</div> */}

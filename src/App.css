@@ -1,4 +1,4 @@
-.App {
+.lbt_bot .lcb_App {
   font-family: sans-serif;
   /* text-align: center; */
 }
@@ -9,11 +9,11 @@
   padding: 0;
 }
 
-.chat-bubble.chat-bubble-reciever p {
+.lbt_bot .lcb_chat-bubble.lbt_bot .lcb_chat-bubble-reciever p {
   margin: 0;
 }
 
-.chatContainer {
+.lbt_bot .lcb_chatContainer {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -22,7 +22,7 @@
   left: 75%;
 }
 
-.chatIconFloat {
+.lbt_bot .lcb_chatIconFloat {
   width: 80px;
   height: 80px;
   background: #41667B;
@@ -32,26 +32,26 @@
   border-radius: 50%;
 }
 
-.chatIconFloat img.user-avatar {
+.lbt_bot .lcb_chatIconFloat img.lbt_bot .lcb_user-avatar {
   width: 39px;
   height: 37px;
 }
 
-.main-conatiner-wrapper {
+.lbt_bot .lcb_main-conatiner-wrapper {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
-.chatIconFloat {}
+.lbt_bot .lcb_chatIconFloat {}
 
-.chat-container {
+.lbt_bot .lcb_chat-container {
   /* width: 400px; */
   /* width: 400px; */
   /* height: 576px; */
 }
 
-.chat-container-hide {
+.lbt_bot .lcb_chat-container-hide {
   /* width: 400px; */
   /* height: 576px; */
 
@@ -65,7 +65,7 @@
   border-radius: 8px;
 }
 
-.chat-container {
+.lbt_bot .lcb_chat-container {
   position: sticky;
   bottom: 0;
   left: 80%;
@@ -77,7 +77,7 @@
   overflow: hidden;
   max-width: 450px;
 }
-.chat-container-desktopOpenView{
+.lbt_bot .lcb_chat-container-desktopOpenView{
   position: absolute;
   bottom: 0;
   right: 0;
@@ -90,7 +90,7 @@
   max-width: 450px;
   
 }
-.chat-container-desktopOpenView-fullscreen{
+.lbt_bot .lcb_chat-container-desktopOpenView-fullscreen{
   position: sticky;
   bottom: 0;
   left: 80%;
@@ -102,13 +102,13 @@
   overflow: hidden;
   max-width: 450px;
 }
-.chat-container-desktopOpenView-fullscreen {
+.lbt_bot .lcb_chat-container-desktopOpenView-fullscreen {
   width: 100vw;
   height: 100vh;
   max-width: 100%;
 }
 
-.chat-container-desktop{
+.lbt_bot .lcb_chat-container-desktop{
   position: absolute;
   bottom: 0px;
   right: 0;
@@ -119,17 +119,17 @@
   overflow: hidden;
   max-width: 450px;
 }
-.chat-container-desktop .chat-header-wrapper {
+.lbt_bot .lcb_chat-container-desktop .lbt_bot .lcb_chat-header-wrapper {
   height: auto;
 }
-.headerText {
+.lbt_bot .lcb_headerText {
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
 }
 
-.card {
+.lbt_bot .lcb_card {
   padding: 16px;
   text-align: center;
   border: none !important;
@@ -140,10 +140,10 @@
   border-radius: 0;
 }
 
-.card:hover {
+.lbt_bot .lcb_card:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-.humanJoinedContainer {
+.lbt_bot .lcb_humanJoinedContainer {
   margin: 16px;
   position: relative;
   display: flex;
@@ -151,7 +151,7 @@
   align-items: center;
   height: 32px;
 }
-.humanJoinedContainer .lineForNewJoined {
+.lbt_bot .lcb_humanJoinedContainer .lbt_bot .lcb_lineForNewJoined {
   position: absolute;
   width: 100%;
   height: 1px;
@@ -160,7 +160,7 @@
   z-index: -1;
   top: 7px;
 }
-p.labelForNewJoined {
+p.lbt_bot .lcb_labelForNewJoined {
   height: 30px;
   background: white;
   width: auto;
@@ -169,7 +169,7 @@ p.labelForNewJoined {
   right: 50%;
   top: 50%;
 }
-.sender-conataoner {
+.lbt_bot .lcb_sender-conataoner {
   /* display: block!important; */
   display: flex;
   justify-content: flex-start;
@@ -177,7 +177,7 @@ p.labelForNewJoined {
   /* width: 85%; */
 }
 
-.message-container {
+.lbt_bot .lcb_message-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -188,12 +188,12 @@ p.labelForNewJoined {
   overflow-y: scroll;
 }
 
-.message-container::-webkit-scrollbar {
+.lbt_bot .lcb_message-container::-webkit-scrollbar {
   display: none;
   /* padding: 20px; */
 }
 
-.message-container-fullscreen {
+.lbt_bot .lcb_message-container-fullscreen {
   margin-left: 25rem;
   margin-right: 25rem;
   height: 100%;
@@ -202,11 +202,11 @@ p.labelForNewJoined {
   /* padding: 20px; */
 }
 
-.input-message {
+.lbt_bot .lcb_input-message {
   width: 100%;
 }
 
-.input-message form {
+.lbt_bot .lcb_input-message form {
   display: flex;
   width: 100%;
   justify-content: flex-start;
@@ -214,7 +214,7 @@ p.labelForNewJoined {
   width: 100%;
 }
 
-.input-message input {
+.lbt_bot .lcb_input-message input {
   /* flex-basis: 75%; */
   padding: 12px 20px;
   margin: 16px;
@@ -235,7 +235,7 @@ p.labelForNewJoined {
   
 }
 
-.input-message button {
+.lbt_bot .lcb_input-message button {
   flex-basis: 20%;
   /* //background: #67b26f; fallback for old browsers */
   border-radius: 5px;
@@ -249,11 +249,11 @@ p.labelForNewJoined {
   font-size: 16px;
 }
 
-button.sendButton {
+button.lbt_bot .lcb_sendButton {
   background: transparent;
 }
 
-.chat-bubble {
+.lbt_bot .lcb_chat-bubble {
   padding: 0px 15px;
   box-sizing: border-box;
   max-width: 80%;
@@ -262,7 +262,7 @@ button.sendButton {
   border-radius: 12px 0 12px 12px;
 }
 
-.chat-bubble-sender {
+.lbt_bot .lcb_chat-bubble-sender {
   background: #F2F4F7;
   /* align-self: flex-start; */
   color: #101828;
@@ -274,19 +274,19 @@ button.sendButton {
   gap: 8px;
   /* align-self: stretch; */
 }
-.wrapperOfBotInitials .botLinks{
+.lbt_bot .lcb_wrapperOfBotInitials .lbt_bot .lcb_botLinks{
   font-weight: 700;
   color: #000;
 }
 
-.chat-bubble-reciever {
+.lbt_bot .lcb_chat-bubble-reciever {
   background: #22343E;
   /* background: #22343E; */
   align-self: flex-end;
   color: white;
   justify-content: flex-end;
   border-radius: 8px 0px 8px 8px;
-  /* background: rgba(65, 102, 123, 0.20); */
+  /* background: rgba(65, 102, 123, 0.lbt_bot .lcb_20); */
 
   /* color: var(--base-black, #000); */
 
@@ -304,11 +304,11 @@ button.sendButton {
   /* 150% */
 }
 
-.chat-header-wrapper {
+.lbt_bot .lcb_chat-header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.22); */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.lbt_bot .lcb_25), 0 2px 2px rgba(0, 0, 0, 0.lbt_bot .lcb_22); */
   /* padding: 16px; */
   /* padding-top: 16px; */
   background: #fff;
@@ -319,24 +319,24 @@ button.sendButton {
   height: 72px;
 }
 
-.user-avatar {
+.lbt_bot .lcb_user-avatar {
   width: 50px;
   height: 50px;
   /* margin: 0 10px; */
 }
 
-.input-message {
+.lbt_bot .lcb_input-message {
   position: absolute;
   bottom: 0;
   width: 100%;
   background: white;
 }
 
-.inputText {
+.lbt_bot .lcb_inputText {
   position: relative;
 }
 
-.sendButton {
+.lbt_bot .lcb_sendButton {
   position: absolute;
   right: 0;
 }
@@ -352,108 +352,108 @@ button.sendButton {
   letter-spacing: 0.5px;
 }
 
-.ce-chat-list {
+.lbt_bot .lcb_ce-chat-list {
   background-color: rgb(240, 240, 240) !important;
 }
 
-.ce-chats-container {
+.lbt_bot .lcb_ce-chats-container {
   background-color: rgb(240, 240, 240) !important;
 }
 
-.ce-active-chat-card {
+.lbt_bot .lcb_ce-active-chat-card {
   background-color: #cabcdc !important;
   border: 4px solid #cabcdc !important;
   border-radius: 0px !important;
 }
 
-.ce-chat-subtitle-text {
+.lbt_bot .lcb_ce-chat-subtitle-text {
   color: #595959 !important;
 }
 
-.ce-chat-form-container {
+.lbt_bot .lcb_ce-chat-form-container {
   padding-bottom: 20px !important;
 }
 
-.ce-text-input {
+.lbt_bot .lcb_ce-text-input {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
 }
 
-.ce-primary-button {
+.lbt_bot .lcb_ce-primary-button {
   border-radius: 6px !important;
   background-color: #7554a0 !important;
   position: relative;
   bottom: 1px;
 }
 
-.ce-danger-button {
+.lbt_bot .lcb_ce-danger-button {
   background-color: white !important;
   border-radius: 22px !important;
 }
 
-.ce-settings {
+.lbt_bot .lcb_ce-settings {
   background-color: rgb(240, 240, 240) !important;
 }
 
-.ce-autocomplete-input {
+.lbt_bot .lcb_ce-autocomplete-input {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
 }
 
-.ce-autocomplete-options {
+.lbt_bot .lcb_ce-autocomplete-options {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
   background-color: white !important;
 }
 
-.ce-chat-settings-container {
+.lbt_bot .lcb_ce-chat-settings-container {
   padding-top: 12px !important;
 }
 
-.ce-chat-avatars-row {
+.lbt_bot .lcb_ce-chat-avatars-row {
   display: none !important;
 }
 
 /* CUSTOM FEED */
 
-.chat-feed {
+.lbt_bot .lcb_chat-feed {
   height: 100%;
   width: 100%;
   background-color: rgb(240, 240, 240);
 }
 
-.chat-title-container {
+.lbt_bot .lcb_chat-title-container {
   width: calc(100% - 36px);
   padding: 18px;
   text-align: center;
 }
 
-.chat-title {
+.lbt_bot .lcb_chat-title {
   color: #7554a0;
   font-weight: 800;
   font-size: 24px;
 }
 
-.chat-subtitle {
+.lbt_bot .lcb_chat-subtitle {
   color: #7554a0;
   font-weight: 600;
   font-size: 12px;
   padding-top: 4px;
 }
 
-.message-row {
+.lbt_bot .lcb_message-row {
   float: left;
   width: 100%;
   display: flex;
   margin-left: 18px;
 }
 
-.message-block {
+.lbt_bot .lcb_message-block {
   width: 100%;
   display: inline-block;
 }
 
-.message-avatar {
+.lbt_bot .lcb_message-avatar {
   width: 44px;
   height: 44px;
   border-radius: 22px;
@@ -464,14 +464,14 @@ button.sendButton {
   background-size: 48px;
 }
 
-.message {
+.lbt_bot .lcb_message {
   padding: 12px;
   font-size: 16px;
   border-radius: 6px;
   max-width: 60%;
 }
 
-.message-image {
+.lbt_bot .lcb_message-image {
   margin-right: 18px;
   object-fit: cover;
   border-radius: 6px;
@@ -483,12 +483,12 @@ button.sendButton {
   min-width: 100px;
 }
 
-.read-receipts {
+.lbt_bot .lcb_read-receipts {
   position: relative;
   bottom: 6px;
 }
 
-.read-receipt {
+.lbt_bot .lcb_read-receipt {
   width: 13px;
   height: 13px;
   border-radius: 13px;
@@ -498,7 +498,7 @@ button.sendButton {
   background-size: 14px;
 }
 
-.message-form-container {
+.lbt_bot .lcb_message-form-container {
   position: absolute;
   bottom: 0px;
   width: calc(100% - 36px);
@@ -506,14 +506,14 @@ button.sendButton {
   background-color: rgb(240, 240, 240);
 }
 
-.message-form {
+.lbt_bot .lcb_message-form {
   overflow: hidden;
   border-radius: 6px;
   border: 1px solid #3b2a50;
   background-color: white;
 }
 
-.message-input {
+.lbt_bot .lcb_message-input {
   height: 40px;
   width: calc(100% - 132px);
   background-color: white;
@@ -523,13 +523,13 @@ button.sendButton {
   font-size: 15px;
 }
 
-.image-button {
+.lbt_bot .lcb_image-button {
   cursor: pointer;
   padding: 0px 12px;
   height: 100%;
 }
 
-.send-button {
+.lbt_bot .lcb_send-button {
   height: 42px;
   background-color: white;
   border: 1px solid white;
@@ -537,13 +537,13 @@ button.sendButton {
   cursor: pointer;
 }
 
-.send-icon {
+.lbt_bot .lcb_send-icon {
   top: 1px;
   position: relative;
   transform: rotate(-90deg);
 }
 
-.picture-icon {
+.lbt_bot .lcb_picture-icon {
   top: 1px;
   position: relative;
   font-size: 14px;
@@ -559,7 +559,7 @@ button.sendButton {
   font-size: 62, 5%;
 }
 
-.wrapper {
+.lbt_bot .lcb_wrapper {
   height: 100vh;
   width: 100%;
   background: rgb(117, 84, 160);
@@ -569,7 +569,7 @@ button.sendButton {
   align-items: center;
 }
 
-.input {
+.lbt_bot .lcb_input {
   color: #333;
   font-size: 1.2rem;
   margin: 0 auto;
@@ -585,11 +585,11 @@ button.sendButton {
   margin-bottom: 25px;
 }
 
-.form {
+.lbt_bot .lcb_form {
   width: 400px;
 }
 
-.title {
+.lbt_bot .lcb_title {
   text-align: center;
   color: white;
   margin-bottom: 30px;
@@ -598,7 +598,7 @@ button.sendButton {
   ;
 }
 
-.button {
+.lbt_bot .lcb_button {
   border-radius: 4px;
   border: none;
   background-color: white;
@@ -614,14 +614,14 @@ button.sendButton {
   width: 90%;
 }
 
-.button span {
+.lbt_bot .lcb_button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.4s;
 }
 
-.button span:after {
+.lbt_bot .lcb_button span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -630,35 +630,35 @@ button.sendButton {
   transition: 0.5s;
 }
 
-.button:hover span {
+.lbt_bot .lcb_button:hover span {
   padding-right: 25px;
 }
 
-.button:hover span:after {
+.lbt_bot .lcb_button:hover span:after {
   opacity: 1;
   right: 0;
 }
 
-.user-avatar {
+.lbt_bot .lcb_user-avatar {
   margin-right: 15px;
 }
 
-.svg-icon {
+.lbt_bot .lcb_svg-icon {
   cursor: pointer;
   margin-right: 15px
 }
 
 
-.chat-img-container {
+.lbt_bot .lcb_chat-img-container {
   width: 303px;
   height: 229px;
   top: 275px;
   left: 71px;
 }
 
-.single-chat-img {}
+.lbt_bot .lcb_single-chat-img {}
 
-.single-chat-tittle {
+.lbt_bot .lcb_single-chat-tittle {
   width: 96px;
   height: 20px;
   top: 188px;
@@ -674,7 +674,7 @@ button.sendButton {
 
 }
 
-.single-chat-text {
+.lbt_bot .lcb_single-chat-text {
   /* width: 181px;
   height: 13px;
   top: 212px;
@@ -712,23 +712,23 @@ button.sendButton {
 
 }
 
-.imges {
+.lbt_bot .lcb_imges {
   width: 220px;
   height: 177px;
   border-radius: 8px;
 
 }
 
-.tab1cards {
+.lbt_bot .lcb_tab1cards {
   display: flex;
   flex-direction: row;
 }
 
-.bot-img {
+.lbt_bot .lcb_bot-img {
   margin: 0px 8px;
 }
 
-.name-content {
+.lbt_bot .lcb_name-content {
 
   display: flex;
   justify-content: flex-end;
@@ -737,7 +737,7 @@ button.sendButton {
 
 
 /* Container to hold the images */
-.image-container {
+.lbt_bot .lcb_image-container {
   width: 100%;
   /* white-space: nowrap; */
   /* margin-left: 63px; */
@@ -750,24 +750,24 @@ button.sendButton {
   /* gap: 1em; */
 }
 
-.image-container::-webkit-scrollbar {
+.lbt_bot .lcb_image-container::-webkit-scrollbar {
   display: none;
 }
 
 /* Each image wrapper */
-.image-wrapper {
+.lbt_bot .lcb_image-wrapper {
   display: inline-block;
   /* Display images in a row */
   margin-right: 10px;
   /* Add some spacing between images (optional) */
 }
-.image-wrapper {
+.lbt_bot .lcb_image-wrapper {
   width: 190px;
   margin-right: 0;
 }
 
 /* The actual images */
-.image-wrapper img {
+.lbt_bot .lcb_image-wrapper img {
   /* width: 200px;  Set the desired width for each image */
   height: auto;
   /* Maintain aspect ratio */
@@ -778,7 +778,7 @@ button.sendButton {
 
 }
 
-.image-wrapper .img-title {
+.lbt_bot .lcb_image-wrapper .lbt_bot .lcb_img-title {
 
   /* width: 96px;
   height: 20px; */
@@ -798,7 +798,7 @@ button.sendButton {
 
 }
 
-.image-wrapper .img-text {
+.lbt_bot .lcb_image-wrapper .lbt_bot .lcb_img-text {
   /* width: 181px; */
   /* height: 13px;
   top: 212px;
@@ -817,13 +817,13 @@ button.sendButton {
 
 }
 
-.card {
+.lbt_bot .lcb_card {
   padding: 16px;
   text-align: center;
   border: none !important;
 }
 
-.botInitialMessage {
+.lbt_bot .lcb_botInitialMessage {
   display: flex;
   padding: 8px 16px;
   align-items: center;
@@ -836,13 +836,13 @@ button.sendButton {
   font-weight: 400;
 }
 
-.wrapperOfBotInitials {
+.lbt_bot .lcb_wrapperOfBotInitials {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
 }
 
-.convoByBotWrapper {
+.lbt_bot .lcb_convoByBotWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -851,11 +851,11 @@ button.sendButton {
   right: 16px;
 }
 
-.back-arrow {
+.lbt_bot .lcb_back-arrow {
   margin-right: 16px;
 }
 
-.chat-img {
+.lbt_bot .lcb_chat-img {
   width: 341px;
   height: 336px;
   top: 109px;
@@ -865,7 +865,7 @@ button.sendButton {
 
 }
 
-.img-title {
+.lbt_bot .lcb_img-title {
   /* width: 226px;
   height: 32px; */
   top: 469px;
@@ -883,7 +883,7 @@ button.sendButton {
 
 }
 
-.single-img-text {
+.lbt_bot .lcb_single-img-text {
   /* width: 343px;
   height: 71px; */
   top: 517px;
@@ -907,20 +907,20 @@ button.sendButton {
 
 
 }
-.materials {
+.lbt_bot .lcb_materials {
   margin: 16px 0;
 }
-.roundForOptions{
+.lbt_bot .lcb_roundForOptions{
   width: 50px;
     height: 50px;
     border-radius: 50%;
     opacity: 75%;
 }
-.wrapperOfProductOptions{
+.lbt_bot .lcb_wrapperOfProductOptions{
   display: flex;
   gap: 1em;
 }
-.material-title {
+.lbt_bot .lcb_material-title {
   /* width: 81px;
   height: 28px; */
 
@@ -935,7 +935,7 @@ button.sendButton {
   color: #101828;
 }
 
-.consultation {
+.lbt_bot .lcb_consultation {
   width: 343px;
   height: 56px;
   top: 16px;
@@ -948,11 +948,11 @@ button.sendButton {
 
 }
 
-.delivery-estimate {
+.lbt_bot .lcb_delivery-estimate {
   margin-top: 48px;
 }
 
-.delivery-estimate-title {
+.lbt_bot .lcb_delivery-estimate-title {
   color: #101828;
   /* Text lg/Semibold */
   font-family: Inter;
@@ -963,7 +963,7 @@ button.sendButton {
 }
 
 
-.delivery-estimate-content {
+.lbt_bot .lcb_delivery-estimate-content {
   color: #101828;
   font-family: Inter;
   font-size: 14px;
@@ -973,7 +973,7 @@ button.sendButton {
 
 /* Image Data container */
 
-.imageOpenerWrapper {
+.lbt_bot .lcb_imageOpenerWrapper {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -982,18 +982,18 @@ button.sendButton {
   background: white;
 }
 
-.chat-header-wrapper.imageOpnerConatiner {
+.lbt_bot .lcb_chat-header-wrapper.lbt_bot .lcb_imageOpnerConatiner {
   margin: 0;
   padding: 16px;
 }
 
-.image-page-container {
+.lbt_bot .lcb_image-page-container {
   display: flex;
   flex-direction: column;
   margin: 10px 16px;
 }
 
-span.img-title {
+span.lbt_bot .lcb_img-title {
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -1002,7 +1002,7 @@ span.img-title {
   color: #101828;
 }
 
-p.single-img-text {
+p.lbt_bot .lcb_single-img-text {
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -1011,7 +1011,7 @@ p.single-img-text {
   color: #101828;
 }
 
-span.readMoreInImagePage {
+span.lbt_bot .lcb_readMoreInImagePage {
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -1020,7 +1020,7 @@ span.readMoreInImagePage {
   color: #101828;
 }
 
-.materialContainer {
+.lbt_bot .lcb_materialContainer {
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -1029,7 +1029,7 @@ span.readMoreInImagePage {
   margin: 16px 0;
 }
 
-button.consultation {
+button.lbt_bot .lcb_consultation {
   border-radius: 38px;
   background: #22343E;
   color: #FFF;
@@ -1040,7 +1040,7 @@ button.consultation {
   font-weight: 700;
 }
 
-.carousel .slide img {
+.lbt_bot .lcb_carousel .lbt_bot .lcb_slide img {
   width: 100%;
   vertical-align: top;
   border: 0;
@@ -1049,65 +1049,65 @@ button.consultation {
 }
 
 @media only screen and (min-width: 1200px) {
-	.chatContainer {
+	.lbt_bot .lcb_chatContainer {
 		left: 92%;
 		bottom: 6%;
 	}
-  .chat-container-desktopOpenView-fullscreen .message-container, .chat-container-desktopOpenView-fullscreen .input-message form{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message form{
     width: 700px;
     margin: 16px auto;
   }
-  .chat-container-desktopOpenView-fullscreen .input-message input{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message input{
     margin: 0 auto;
   }
-  .chat-bubble {
+  .lbt_bot .lcb_chat-bubble {
     max-width: 100%;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.chatContainer {
+	.lbt_bot .lcb_chatContainer {
 		left: 91%;
 		bottom: 6%;
 	}
-  .chat-container-desktopOpenView-fullscreen .message-container, .chat-container-desktopOpenView-fullscreen .input-message form{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message form{
     width: 700px;
     margin: 16px auto;
   }
-  .chat-container-desktopOpenView-fullscreen .input-message input{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message input{
     margin: 0 auto;
   }
-  .chat-bubble {
+  .lbt_bot .lcb_chat-bubble {
     max-width: 100%;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-	.chatContainer {
+	.lbt_bot .lcb_chatContainer {
 		left: 89%;
 		bottom: 6%;
 	}
-  .chat-container-desktopOpenView-fullscreen .message-container, .chat-container-desktopOpenView-fullscreen .input-message form{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message form{
     width: 700px;
     margin: 16px auto;
   }
-  .chat-container-desktopOpenView-fullscreen .input-message input{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message input{
     margin: 0 auto;
   }
-  .chat-bubble {
+  .lbt_bot .lcb_chat-bubble {
     max-width: 100%;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
-	.chatContainer {
+	.lbt_bot .lcb_chatContainer {
 		left: 85%;
 		bottom: 6%;
 	}
 }
 
 @media (min-width: 400px) and (max-width: 576px) {
-	.chatContainer {
+	.lbt_bot .lcb_chatContainer {
 		left: 80%;
 		bottom: 6%;
 	}

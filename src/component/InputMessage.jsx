@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const InputMessage = ({ handleAddMessage, inputMessage, setInputMessage }) => {
 
   return (
-    <div className="input-message">
+    <div className="lcb_input-message">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -12,10 +12,10 @@ export const InputMessage = ({ handleAddMessage, inputMessage, setInputMessage }
             setInputMessage("");
           }
         }}
-        className="inputText"
+        className="lcb_inputText"
         >
         <input
-          className="inputTextField"
+          className="lcb_inputTextField"
           type="text"
           placeholder="Ask anything..."
           onChange={(e) => {
@@ -24,7 +24,7 @@ export const InputMessage = ({ handleAddMessage, inputMessage, setInputMessage }
           name="message"
           value={inputMessage}
         />
-        <button type="submit" className="sendButton">
+        <button type="submit" className="lcb_sendButton">
           <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/send.png"} alt="user-avatar" />
         </button>
       </form>

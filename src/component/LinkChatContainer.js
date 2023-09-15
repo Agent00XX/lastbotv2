@@ -49,7 +49,7 @@ export const LinkChatContainer = () => {
 
 	// const scrollRef = useRef()
 	return (
-		<div className={showChat ? "chat-container" : "chatContainer"}>
+		<div className={showChat ? "lcb_chat-container" : "lcb_chatContainer"}>
 			<ChatHeader setShowChat={setShowChat} showChat={showChat} />
 			{/* <SingleImg /> */}
 			{showChat && (
