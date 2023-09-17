@@ -8,8 +8,8 @@ https://agent00xx.github.io/lastbotv2
 # To test it on other project.
 
 - Use this Script Link Tag in html or embbed it in new any project.
-<link href="https://agent00xx.github.io/lastbotv2/static/css/main.9b8d9f32.css" rel="stylesheet">
-<script defer src="https://agent00xx.github.io/lastbotv2/static/js/main.bc6f81ee.js"></script>
+<script defer="defer" src="https://agent00xx.github.io/lastbotv2/static/js/main.fa636628.js"></script>
+<link href="https://agent00xx.github.io/lastbotv2/static/css/main.982c91f1.css" rel="stylesheet">
 
 - Add below component declaration code where you want to render this component.
-<r2w-checklist items='[{"label":"First Thing","isChecked":false}]' />
+<r2w-checklist />
