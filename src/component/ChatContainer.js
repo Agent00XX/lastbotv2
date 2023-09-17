@@ -177,7 +177,7 @@ export const ChatContainer = () => {
                         setInputMessage={setInputMessage}
                     // messages={messages}
                     />
-                    <InputMessage handleAddMessage={handleAddMessage} inputMessage={inputMessage} setInputMessage={setInputMessage} />
+                    <InputMessage isFullScreen={isFullScreen} handleAddMessage={handleAddMessage} inputMessage={inputMessage} setInputMessage={setInputMessage} />
                 </>
                 }
             </div>
