@@ -9,7 +9,7 @@
   padding: 0;
 }
 
-.lbt_bot .lcb_chat-bubble.lbt_bot .lcb_chat-bubble-reciever p {
+.lbt_bot .lcb_chat-bubble .lcb_chat-bubble-reciever p {
   margin: 0;
 }
 
@@ -32,7 +32,7 @@
   border-radius: 50%;
 }
 
-.lbt_bot .lcb_chatIconFloat img.lbt_bot .lcb_user-avatar {
+.lbt_bot .lcb_chatIconFloat img .lcb_user-avatar {
   width: 39px;
   height: 37px;
 }
@@ -119,7 +119,7 @@
   overflow: hidden;
   max-width: 450px;
 }
-.lbt_bot .lcb_chat-container-desktop .lbt_bot .lcb_chat-header-wrapper {
+.lbt_bot .lcb_chat-container-desktop .lcb_chat-header-wrapper {
   height: auto;
 }
 .lbt_bot .lcb_headerText {
@@ -151,7 +151,7 @@
   align-items: center;
   height: 32px;
 }
-.lbt_bot .lcb_humanJoinedContainer .lbt_bot .lcb_lineForNewJoined {
+.lbt_bot .lcb_humanJoinedContainer .lcb_lineForNewJoined {
   position: absolute;
   width: 100%;
   height: 1px;
@@ -248,7 +248,7 @@ p.lbt_bot .lcb_labelForNewJoined {
   font-size: 16px;
 }
 
-button.lbt_bot .lcb_sendButton {
+button .lcb_sendButton {
   background: transparent;
 }
 
@@ -273,7 +273,7 @@ button.lbt_bot .lcb_sendButton {
   gap: 8px;
   /* align-self: stretch; */
 }
-.lbt_bot .lcb_wrapperOfBotInitials .lbt_bot .lcb_botLinks{
+.lbt_bot .lcb_wrapperOfBotInitials .lcb_botLinks{
   font-weight: 700;
   color: #000;
 }
@@ -773,7 +773,7 @@ button.lbt_bot .lcb_sendButton {
 
 }
 
-.lbt_bot .lcb_image-wrapper .lbt_bot .lcb_img-title {
+.lbt_bot .lcb_image-wrapper .lcb_img-title {
 
   /* width: 96px;
   height: 20px; */
@@ -793,7 +793,7 @@ button.lbt_bot .lcb_sendButton {
 
 }
 
-.lbt_bot .lcb_image-wrapper .lbt_bot .lcb_img-text {
+.lbt_bot .lcb_image-wrapper .lcb_img-text {
   /* width: 181px; */
   /* height: 13px;
   top: 212px;
@@ -982,7 +982,7 @@ button.lbt_bot .lcb_sendButton {
   background: white;
 }
 
-.lbt_bot .lcb_chat-header-wrapper.lbt_bot .lcb_imageOpnerConatiner {
+.lbt_bot .lcb_chat-header-wrapper .lcb_imageOpnerConatiner {
   margin: 0;
   padding: 16px;
 }
@@ -993,7 +993,7 @@ button.lbt_bot .lcb_sendButton {
   margin: 10px 16px;
 }
 
-span.lbt_bot .lcb_img-title {
+span .lcb_img-title {
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -1002,7 +1002,7 @@ span.lbt_bot .lcb_img-title {
   color: #101828;
 }
 
-p.lbt_bot .lcb_single-img-text {
+p .lcb_single-img-text {
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -1011,7 +1011,7 @@ p.lbt_bot .lcb_single-img-text {
   color: #101828;
 }
 
-span.lbt_bot .lcb_readMoreInImagePage {
+span .lcb_readMoreInImagePage {
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -1029,7 +1029,7 @@ span.lbt_bot .lcb_readMoreInImagePage {
   margin: 16px 0;
 }
 
-button.lbt_bot .lcb_consultation {
+button .lcb_consultation {
   border-radius: 38px;
   background: #22343E;
   color: #FFF;
@@ -1040,7 +1040,7 @@ button.lbt_bot .lcb_consultation {
   font-weight: 700;
 }
 
-.lbt_bot .lcb_carousel .lbt_bot .lcb_slide img {
+.lbt_bot .lcb_carousel .lcb_slide img {
   width: 100%;
   vertical-align: top;
   border: 0;
@@ -1053,11 +1053,11 @@ button.lbt_bot .lcb_consultation {
 		left: 92%;
 		bottom: 6%;
 	}
-  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message form{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen  .lcb_input-message form{
     width: 700px;
     margin: 16px auto;
   }
-  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message input{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lcb_input-message input{
     margin: 0 auto;
   }
   .lbt_bot .lcb_chat-bubble {
@@ -1070,11 +1070,11 @@ button.lbt_bot .lcb_consultation {
 		left: 91%;
 		bottom: 6%;
 	}
-  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message form{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lcb_input-message form{
     width: 700px;
     margin: 16px auto;
   }
-  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message input{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lcb_input-message input{
     margin: 0 auto;
   }
   .lbt_bot .lcb_chat-bubble {
@@ -1087,11 +1087,11 @@ button.lbt_bot .lcb_consultation {
 		left: 89%;
 		bottom: 6%;
 	}
-  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message form{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lcb_message-container, .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lcb_input-message form{
     width: 700px;
     margin: 16px auto;
   }
-  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lbt_bot .lcb_input-message input{
+  .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen .lcb_input-message input{
     margin: 0 auto;
   }
   .lbt_bot .lcb_chat-bubble {
