@@ -73,7 +73,7 @@ export const ChatContainer = () => {
             redirect: 'follow'
         };
 
-        fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}&url=${"elo.lastbot.com"}`, requestOptions)
+        fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 console.log({ result });

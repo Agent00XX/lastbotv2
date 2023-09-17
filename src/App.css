@@ -237,12 +237,11 @@ p.lbt_bot .lcb_labelForNewJoined {
 
 .lbt_bot .lcb_input-message button {
   flex-basis: 20%;
-  /* //background: #67b26f; fallback for old browsers */
-  border-radius: 5px;
-  margin-bottom: 3px;
+  border-radius: 16px;
+  /* margin-bottom: 3px; */
   border: none;
   color: white;
-  padding: 8px 20px;
+  padding: 7px 8px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -286,11 +285,6 @@ button.lbt_bot .lcb_sendButton {
   color: white;
   justify-content: flex-end;
   border-radius: 8px 0px 8px 8px;
-  /* background: rgba(65, 102, 123, 0.lbt_bot .lcb_20); */
-
-  /* color: var(--base-black, #000); */
-
-  /* Text md/Regular */
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -301,7 +295,7 @@ button.lbt_bot .lcb_sendButton {
   align-items: center;
   gap: 8px;
   margin-bottom: 16px;
-  /* 150% */
+  margin-top: 16px;
 }
 
 .lbt_bot .lcb_chat-header-wrapper {
@@ -338,7 +332,8 @@ button.lbt_bot .lcb_sendButton {
 
 .lbt_bot .lcb_sendButton {
   position: absolute;
-  right: 0;
+  right: 17px;
+  top: 17px;
 }
 
 /* 000000000000000000000000000000000000000000000000000 */
@@ -817,6 +812,11 @@ button.lbt_bot .lcb_sendButton {
 
 }
 
+.lbt_bot .lcb_headertext_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .lbt_bot .lcb_card {
   padding: 16px;
   text-align: center;

@@ -13,7 +13,7 @@ export const ChatHeader = ({ setShowChat, showChat, setIsFullScreen, isFullScree
                 <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Chat-icon.png"} alt="user-avatar" />
             </div> :
                 <div className="lcb_chat-header-wrapper">
-                    <div>
+                    <div className='lcb_headertext_wrapper'>
                         <img src={isHuman ? "https://agent00xx.github.io/lastbotv2/assets/Images/HumanAvatar.png" : "https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} className="lcb_user-avatar" alt="user-avatar" />
                         <span className="lcb_headertext">{isHuman ? "Mari from AINA" : widgetInfo?.name}</span>
                         {!isHuman && <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/bot.png"} alt="user-avatar" style={{ marginLeft: 8 }} />}

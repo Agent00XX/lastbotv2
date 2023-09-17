@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { SingleImg } from "./SingleImg";
 
 const chatImgData = [
@@ -74,6 +74,9 @@ export const ChatMessasges = ({
 }) => {
 	const [showImagePage, setShowImagePage] = useState("");
 	const [singleImageData, setsingleImageData] = useState({});
+	const ref = useRef(null);
+
+
 
 	const getClassName = (type) => {
 		if (type === "assistant" || type === "human") {
@@ -88,6 +91,15 @@ export const ChatMessasges = ({
 			scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
 		}
 	}, []);
+
+  useEffect(() => {
+    if (message.length) {
+      ref.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    }
+  }, [message.length]);
 
 	return (
 		<>
@@ -242,10 +254,7 @@ export const ChatMessasges = ({
 						</div>
 					)} */}
 
-					{/* <div
-						  
-						className="lcb_to-scroll-div"
-					/> */}
+					<div className="lcb_to-scroll-div" ref={ref}/>
 				</div>
 			)}
 			{showImagePage && (
