@@ -1,5 +1,5 @@
 function generateRandomString() {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const minLength = 12;
   const maxLength = 16;
   const randomLength = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;

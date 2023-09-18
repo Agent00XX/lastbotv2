@@ -15,11 +15,11 @@
 
 .lbt_bot .lcb_chatContainer {
   position: absolute;
-  width: 60px;
+  /* width: 60px; */
   height: 60px;
   /* top: 0; */
   bottom: 5%;
-  left: 75%;
+  right: 0;
 }
 
 .lbt_bot .lcb_chatIconFloat {
@@ -66,9 +66,9 @@
 }
 
 .lbt_bot .lcb_chat-container {
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  left: 80%;
+  right: 0;
   z-index: 10000000;
   background-color: #fff;
   color: black;
@@ -78,7 +78,7 @@
   max-width: 450px;
 }
 .lbt_bot .lcb_chat-container-desktopOpenView{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   z-index: 10000000;
@@ -91,9 +91,9 @@
   
 }
 .lbt_bot .lcb_chat-container-desktopOpenView-fullscreen{
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  left: 80%;
+  right: 0;
   z-index: 10000000;
   background-color: #fff;
   color: black;
@@ -109,7 +109,7 @@
 }
 
 .lbt_bot .lcb_chat-container-desktop{
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   right: 0;
   z-index: 10000000;
@@ -1112,15 +1112,15 @@ button .lcb_consultation {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
-	.lbt_bot .lcb_chatContainer {
+	/* .lbt_bot .lcb_chatContainer {
 		left: 85%;
 		bottom: 6%;
-	}
+	} */
 }
 
 @media (min-width: 400px) and (max-width: 576px) {
-	.lbt_bot .lcb_chatContainer {
+	/* .lbt_bot .lcb_chatContainer {
 		left: 80%;
 		bottom: 6%;
-	}
+	} */
 }

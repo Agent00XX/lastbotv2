@@ -73,7 +73,8 @@ export const ChatContainer = () => {
             redirect: 'follow'
         };
 
-        fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
+        fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}&url=${"elo.lastbot.com"}`, requestOptions)
+        // fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 console.log({ result });
@@ -164,7 +165,7 @@ export const ChatContainer = () => {
 
     return (
         <div className="lbt_bot">
-            <div className={showChat ? isFullScreen ? "lcb_chat-container-desktopOpenView-fullscreen" : window.innerWidth > 769 ? "lcb_chat-container-desktopOpenView" : "lcb_chat-container" : window.innerWidth > 769 ? "lcb_chat-container-desktop" : "lcb_chatContainer"} >
+            <div className={showChat ? isFullScreen ? "lcb_chat-container-desktopOpenView-fullscreen" : window.innerWidth > 769 ? "lcb_chat-container-desktopOpenView" : "lcb_chat-container" :  "lcb_chat-container-desktop" } >
                 <ChatHeader setShowChat={setShowChat} showChat={showChat} isFullScreen={isFullScreen} setIsFullScreen={setIsFullScreen} isHuman={isHuman} widgetInfo={widgetInfo} />
                 {/* <SingleImg /> */}
                 {showChat && <>
