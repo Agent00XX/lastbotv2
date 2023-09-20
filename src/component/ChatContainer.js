@@ -15,10 +15,9 @@ const messages = [
 
 ];
 
-const BASE_URL = "https://elo.pasi.ai/widgets/5b4c5276b0e2b489b725f331eafa24"
 
 
-export const ChatContainer = () => {
+export const ChatContainer = ({BASE_URL}) => {
     const scrollRef = useRef();
     const [uuid, setUuid] = useState("")
     const [sessionId, setSessionId] = useState("")
@@ -176,6 +175,7 @@ export const ChatContainer = () => {
                         setIsHuman={setIsHuman}
                         inputMessage={inputMessage}
                         setInputMessage={setInputMessage}
+                        widgetInfo={widgetInfo}
                     // messages={messages}
                     />
                     <InputMessage isFullScreen={isFullScreen} handleAddMessage={handleAddMessage} inputMessage={inputMessage} setInputMessage={setInputMessage} />

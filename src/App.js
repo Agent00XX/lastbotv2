@@ -2,12 +2,10 @@ import "./App.css";
 import { ChatContainer } from "./component/ChatContainer";
 import { Header } from "./component/Header";
 
-function App() {
+function App({baseUrl}) {
 	return (
 		<>
-			{/* <Header />
-			<Header /> */}
-			<ChatContainer />
+			<ChatContainer BASE_URL={baseUrl} />
 		</>
 	);
 }

@@ -82,7 +82,8 @@ export const ChatMessasgesStatic = ({
 	setIsHuman,
 	inputMessage, 
 	setInputMessage,
-	scrollRef
+	scrollRef,
+	widgetInfo
 }) => {
 	const [showImagePage, setShowImagePage] = useState("");
 	const [singleImageData, setsingleImageData] = useState({});
@@ -119,7 +120,8 @@ export const ChatMessasgesStatic = ({
 									<p className="lcb_labelForNewJoined">{label}</p>
 								</div> : <>
 									<div className="lcb_ sender-conataoner">
-										<img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" />
+										{/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" /> */}
+										<div className="lcb_user-avatar">{widgetInfo?.initials}</div>
 										<p className={`lcb_chat-bubble   ${getClassName(role)} `}>
 											{contents}
 										</p>

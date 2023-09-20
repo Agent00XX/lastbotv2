@@ -314,9 +314,15 @@ button .lcb_sendButton {
 }
 
 .lbt_bot .lcb_user-avatar {
-  width: 50px;
+  min-width: 50px !important;
   height: 50px;
-  /* margin: 0 10px; */
+  border-radius: 50%;
+  background-color: rgb(236 208 197);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .lbt_bot .lcb_input-message {
