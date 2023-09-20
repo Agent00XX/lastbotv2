@@ -8,8 +8,8 @@ https://agent00xx.github.io/lastbotv2
 # To test it on other project.
 
 - Use this Script Link Tag in html or embbed it in new any project.
-<script defer="defer" src="https://agent00xx.github.io/lastbotv2/static/js/main.a0cbdf60.js"></script>
-<link href="https://agent00xx.github.io/lastbotv2/static/css/main.9e0a91d4.css" rel="stylesheet">
+<script defer="defer" src="https://agent00xx.github.io/lastbotv2/static/js/main.25335e80.js"></script>
+<link href="https://agent00xx.github.io/lastbotv2/static/css/main.3975decf.css" rel="stylesheet">
 
 - Add below component declaration code where you want to render this component.
-<r2w-checklist />
+<lastbot-widget base-url="https://elo.pasi.ai/widgets/5b4c5276b0e2b489b725f331eafa24"></lastbot-widget>
