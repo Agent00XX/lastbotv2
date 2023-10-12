@@ -149,13 +149,13 @@ export const LinkChatMessages = ({
 
 										{images.length > 0 && (
 											<div
-												class="image-container chat-bubble"
+												className="image-container chat-bubble"
 												style={{ marginBottom: 16 }}
 											>
 												{images.map((cur, idx) => (
 													<>
 														<div
-															class="image-wrapper"
+															className="image-wrapper"
 															onClick={() => {
 																setShowImagePage(cur.title);
 																setsingleImageData(cur);

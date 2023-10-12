@@ -49,10 +49,10 @@ export const ChatPageForProduct = ({ setShowChat }) => {
                     {message}
                   </p>
                 </div>
-                {/* {images.length > 0 && <div class="image-container chat-bubble" style={{ marginBottom: 16 }}>
+                {/* {images.length > 0 && <div className="image-container chat-bubble" style={{ marginBottom: 16 }}>
                   {images.map((cur, idx) => (
                     <>
-                    <div class="image-wrapper" onClick={() => setShowImagePage(cur.title)}>
+                    <div className="image-wrapper" onClick={() => setShowImagePage(cur.title)}>
                     <img src={cur.img} alt="Image 1" />
                     <h6 className="img-title">{cur.title}</h6>
                     <h6 className="img-text">{cur.text}</h6>

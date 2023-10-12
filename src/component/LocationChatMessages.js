@@ -148,13 +148,13 @@ export const LocationChatMessages = ({
 
 										{images.length > 0 && (
 											<div
-												class="lcb_image-container lcb_chat-bubble"
+												className="lcb_image-container lcb_chat-bubble"
 												style={{ marginBottom: 16 }}
 											>
 												{images.map((cur, idx) => (
 													<>
 														<div
-															class="lcb_image-wrapper"
+															className="lcb_image-wrapper"
 															onClick={() => {
 																setShowImagePage(cur.title);
 																setsingleImageData(cur);

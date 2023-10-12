@@ -2,7 +2,7 @@ import React from 'react'
 import { ArrowsAngleContract, ArrowsAngleExpand, ChevronUp } from 'react-bootstrap-icons'
 // import Avtar from '../../public/assets/Images/Avatar.png'
 // import Avtar from './assets/Images/Avtar.png'
-export const ChatHeader = ({ setShowChat, showChat, setIsFullScreen, isFullScreen, isHuman, widgetInfo }) => {
+export const ChatHeader = ({ setShowChat, showChat, setIsFullScreen, isFullScreen, isHuman, widgetInfo, resetChat }) => {
 
     return (
         <>
@@ -20,9 +20,12 @@ export const ChatHeader = ({ setShowChat, showChat, setIsFullScreen, isFullScree
                     {!isHuman && <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/bot.png"} alt="user-avatar" style={{ marginLeft: 8 }} />}
                 </div>
                 <div className="lcb_chat-header-wrapper">
-                    {/* <span className="lcb_svg-icon lcb_mr-2 ">
+                    <span className="lcb_svg-icon lcb_mr-2 " onClick={(e) => {
+                        e.stopPropagation();
+                        resetChat()
+                    }}>
                         <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/backIcon.png"} alt="user-avatar" style={{ marginLeft: 8 }} />
-                    </span> */}
+                    </span>
                     {window.innerWidth > 769 && showChat && <span className="lcb_svg-icon" onClick={(e) => {
                         e.stopPropagation();
                         setIsFullScreen(prev => !prev)

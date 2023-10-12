@@ -17,7 +17,7 @@ const messages = [
 
 
 
-export const ChatContainer = ({BASE_URL}) => {
+export const ChatContainer = ({ BASE_URL }) => {
     const scrollRef = useRef();
     const [uuid, setUuid] = useState("")
     const [sessionId, setSessionId] = useState("")
@@ -42,6 +42,15 @@ export const ChatContainer = ({BASE_URL}) => {
             setSessionId(newSessionId)
         }
     }, [])
+
+    const resetChat = () => {
+        const newUuid = generateRandomString()
+        localStorage.setItem("uuid", newUuid)
+        setUuid(newUuid)
+        const newSessionId = generateRandomString()
+        localStorage.setItem("sessionId", newSessionId)
+        setSessionId(newSessionId)
+    }
 
 
     const [showChat, setShowChat] = useState(false)
@@ -72,8 +81,8 @@ export const ChatContainer = ({BASE_URL}) => {
             redirect: 'follow'
         };
 
-        // fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}&url=${"elo.lastbot.com"}`, requestOptions)
-        fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
+        fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}&url=${window.location.href}`, requestOptions)
+            // fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 console.log({ result });
@@ -141,13 +150,13 @@ export const ChatContainer = ({BASE_URL}) => {
     }
 
     useEffect(() => {
-        if (!widgetInfo) {
+        // if (!widgetInfo) {
             getWidget()
-        }
-        if (!currentUserId && sessionId && uuid) {
+        // }
+        if (sessionId && uuid) {
             getMessageThreads(sessionId, uuid)
         }
-    }, [widgetInfo, currentUserId, sessionId, uuid])
+    }, [currentUserId, sessionId, uuid])
 
     const handleAddMessage = (message) => {
         postMessage(message)
@@ -164,8 +173,8 @@ export const ChatContainer = ({BASE_URL}) => {
 
     return (
         <div className="lbt_bot">
-            <div className={showChat ? isFullScreen ? "lcb_chat-container-desktopOpenView-fullscreen" : window.innerWidth > 769 ? "lcb_chat-container-desktopOpenView" : "lcb_chat-container" :  "lcb_chat-container-desktop" } >
-                <ChatHeader setShowChat={setShowChat} showChat={showChat} isFullScreen={isFullScreen} setIsFullScreen={setIsFullScreen} isHuman={isHuman} widgetInfo={widgetInfo} />
+            <div className={showChat ? isFullScreen ? "lcb_chat-container-desktopOpenView-fullscreen" : window.innerWidth > 769 ? "lcb_chat-container-desktopOpenView" : "lcb_chat-container" : "lcb_chat-container-desktop"} >
+                <ChatHeader setShowChat={setShowChat} showChat={showChat} isFullScreen={isFullScreen} setIsFullScreen={setIsFullScreen} isHuman={isHuman} widgetInfo={widgetInfo} resetChat={resetChat} />
                 {/* <SingleImg /> */}
                 {showChat && <>
                     <ChatMessasges scrollRef={scrollRef}
