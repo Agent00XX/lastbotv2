@@ -18,6 +18,7 @@ const messages = [
 
 
 export const ChatContainer = ({ BASE_URL }) => {
+    console.log("BASE_URL ", BASE_URL);
     const scrollRef = useRef();
     const [uuid, setUuid] = useState("")
     const [sessionId, setSessionId] = useState("")
