@@ -21,6 +21,7 @@ export const ChatContainer = ({ BASE_URL }) => {
     const scrollRef = useRef();
     const [uuid, setUuid] = useState("")
     const [sessionId, setSessionId] = useState("")
+    const [threadInfos, setThreadInfos] = useState([]);
 
     useEffect(() => {
         let localStorageUuid = localStorage.getItem("uuid");
@@ -63,7 +64,8 @@ export const ChatContainer = ({ BASE_URL }) => {
     const [widgetInfo, setWidgetInfo] = useState(null);
     const [currentUserId, setCurrentUserId] = useState("")
     const [isFetching, setIsFetching] = useState(false); // Flag to control polling
-
+    const [showInitialMessages, setShowInitialMessages] = useState([]);
+    
     const getWidget = () => {
         let requestOptions = {
             method: 'GET',
@@ -81,11 +83,11 @@ export const ChatContainer = ({ BASE_URL }) => {
             redirect: 'follow'
         };
 
-        fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}&url=${window.location.href}`, requestOptions)
-            // fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
+        // fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}&url=${window.location.href}`, requestOptions)
+        fetch(`${BASE_URL}/message_threads?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
             .then(response => response.json())
             .then(result => {
-                console.log({ result });
+                setThreadInfos(result)
                 setCurrentUserId(result[0].id)
                 getMessages(sessionId, uuid, result[0].id, true)
             })
@@ -104,6 +106,10 @@ export const ChatContainer = ({ BASE_URL }) => {
         fetch(`${BASE_URL}/message_threads/${currentUserId}/messages?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
             .then(response => response.json())
             .then(result => {
+                console.log("result message--> ", result);
+                if(result.length > 0 && result[result.length - 1].metadata.type === 'options' && result[result.length - 1].metadata.data.length > 0) {
+                    setShowInitialMessages(result[0].metadata.data)
+                }
                 if (firstTime) {
                     setMessage(result)
                 } else if (result[result.length - 1].role === 'assistant' && result[result.length - 1].is_finished) {
@@ -140,10 +146,9 @@ export const ChatContainer = ({ BASE_URL }) => {
         fetch(`${BASE_URL}/message_threads/${currentUserId}/messages?session_id=${sessionId}&uuid=${uuid}`, requestOptions)
             .then(response => response.json())
             .then(result => {
-                console.log(result)
                 setMessage(prev => [...prev, result]);
+                setShowInitialMessages([])
                 setIsFetching(true)
-                console.log("scrollRef.current.scrollHeight", scrollRef.current.scrollHeight)
                 scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
             })
             .catch(error => console.log('error', error));
@@ -170,10 +175,13 @@ export const ChatContainer = ({ BASE_URL }) => {
         return () => clearInterval(interval);
     }, [isFetching]);
 
+    const htmlElRef = useRef(null)
+    const setFocus = () => {htmlElRef.current &&  htmlElRef.current.focus()}
+
 
     return (
         <div className="lbt_bot">
-            <div className={showChat ? isFullScreen ? "lcb_chat-container-desktopOpenView-fullscreen" : window.innerWidth > 769 ? "lcb_chat-container-desktopOpenView" : "lcb_chat-container" : "lcb_chat-container-desktop"} >
+            <div style={{border: '1px solid lightgrey'}} className={showChat ? isFullScreen ? "lcb_chat-container-desktopOpenView-fullscreen" : window.innerWidth > 769 ? "lcb_chat-container-desktopOpenView" : "lcb_chat-container" : "lcb_chat-container-desktop"} >
                 <ChatHeader setShowChat={setShowChat} showChat={showChat} isFullScreen={isFullScreen} setIsFullScreen={setIsFullScreen} isHuman={isHuman} widgetInfo={widgetInfo} resetChat={resetChat} />
                 {/* <SingleImg /> */}
                 {showChat && <>
@@ -185,9 +193,13 @@ export const ChatContainer = ({ BASE_URL }) => {
                         inputMessage={inputMessage}
                         setInputMessage={setInputMessage}
                         widgetInfo={widgetInfo}
+                        setFocus={setFocus}
+                        isFetching={isFetching}
+                        threadInfos={threadInfos}
+                        showInitialMessages={showInitialMessages}
                     // messages={messages}
                     />
-                    <InputMessage isFullScreen={isFullScreen} handleAddMessage={handleAddMessage} inputMessage={inputMessage} setInputMessage={setInputMessage} />
+                    <InputMessage isFetching={isFetching} htmlElRef={htmlElRef} isFullScreen={isFullScreen} handleAddMessage={handleAddMessage} inputMessage={inputMessage} setInputMessage={setInputMessage} />
                 </>
                 }
             </div>

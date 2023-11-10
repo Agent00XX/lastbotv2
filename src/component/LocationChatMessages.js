@@ -67,7 +67,6 @@ export const LocationChatMessages = ({
 
 	const getBotResponse = (userMessage) => {
 		// Simple switch statement for bot responses
-		console.log("🚀 ~ ():", userMessage, userMessage.toLowerCase());
 		switch (userMessage.toLowerCase()) {
 			case "help me choose a kitchen":
 				return "To help you find the perfect kitchen style for your home, let's begin by discussing your personal taste.Among Scandinavian, Farmhouse, and Modern styles, do you find yourself gravitating towards a particular one?";
@@ -80,19 +79,6 @@ export const LocationChatMessages = ({
 		}
 	};
 
-	// const selectServiceHandler = (service) => {
-	//   console.log(
-	//     "🚀 ",
-	//     service
-	//   );
-
-	//   setMessage([...message, { type: 'bot', service }]);
-	//   // // Bot response logic here
-	// const botResponse = getBotResponse(service);
-	// setMessage([...message, { type: 'user', message: botResponse, img: "./assets/Images/Logo.png", }]);
-	// };
-
-	console.log("messagemessagemessage ->", message);
 	return (
 		<>
 			{!showImagePage && (

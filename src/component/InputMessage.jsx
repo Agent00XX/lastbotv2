@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const InputMessage = ({ handleAddMessage, inputMessage, setInputMessage, isFullScreen }) => {
+export const InputMessage = ({ handleAddMessage, inputMessage, setInputMessage, isFullScreen, htmlElRef, isFetching }) => {
 
   return (
     <div className="lcb_input-message">
@@ -22,9 +22,11 @@ export const InputMessage = ({ handleAddMessage, inputMessage, setInputMessage, 
             setInputMessage(e.target.value);
           }}
           name="message"
+          ref={htmlElRef}
+          disabled={isFetching}
           value={inputMessage}
         />
-        <button type="submit" className={`lcb_sendButton ${isFullScreen ? "lcb_manageIcon" : ""}`}>
+        <button type="submit" className={`lcb_sendButton ${isFullScreen ? "lcb_manageIcon" : ""}`} disabled={isFetching}>
           <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/send.png"} alt="user-avatar" />
         </button>
       </form>

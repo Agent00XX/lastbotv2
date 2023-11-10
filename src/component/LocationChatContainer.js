@@ -31,11 +31,6 @@ export const LocationChatContainer = () => {
 	const [message, setMessage] = useState(messages);
 	const [showImgContainer, setshowImgContainer] = useState(false);
 
-	console.log(
-		"🚀 ~ file: InputMessage.jsx:5 ~ InputMessage ~ message:",
-		message
-	);
-	console.log("🚀 ~ isFullScreen", isFullScreen, "showChat", showChat);
 	const handleAddMessage = (message) => {
 		setMessage((prev) => [...prev, { type: "bot", message }]);
 	};

@@ -160,8 +160,8 @@
   z-index: -1;
   top: 7px;
 }
-p.lbt_bot .lcb_labelForNewJoined {
-  height: 30px;
+.lbt_bot .lcb_labelForNewJoined {
+  height: 40px;
   background: white;
   width: auto;
   padding: 0 15px;
@@ -186,6 +186,8 @@ p.lbt_bot .lcb_labelForNewJoined {
   overflow-x: hidden;
   /* padding: 20px; */
   overflow-y: scroll;
+  justify-content: space-between;
+  /* height: 100%; */
 }
 
 .lbt_bot .lcb_message-container::-webkit-scrollbar {
@@ -224,7 +226,7 @@ p.lbt_bot .lcb_labelForNewJoined {
   display: flex;
   width: 343px;
   height: 44px;
-  padding: 8px 16px;
+  padding: 8px 50px 8px 16px;
   align-items: center;
   gap: 8px;
   width: 100%;
@@ -246,6 +248,7 @@ p.lbt_bot .lcb_labelForNewJoined {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  background: transparent;
 }
 
 button .lcb_sendButton {
@@ -751,6 +754,7 @@ button .lcb_sendButton {
   overflow: hidden;
   padding: 0;
   display: flex;
+  gap: 1em;
   /* margin: 20px; */
   overflow-x: scroll;
   /* height: 500px; */
@@ -862,19 +866,26 @@ button .lcb_sendButton {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
+  cursor: pointer;
+  margin: 2px;
 }
 
 .lbt_bot .lcb_wrapperOfBotInitials {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  overflow-x: scroll;
+}
+
+.lbt_bot .lcb_wrapperOfBotInitials::-webkit-scrollbar {
+  display: none;
 }
 
 .lbt_bot .lcb_convoByBotWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  position: fixed;
+  /* position: fixed; */
   bottom: 60px;
   right: 16px;
 }
@@ -1074,6 +1085,48 @@ button .lcb_consultation {
   border: 0;
   height: 288px;
   border-radius: 8px;
+}
+
+.lcb_spinner {
+  width: 70px;
+  text-align: center;
+}
+
+.lcb_spinner > div {
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  background-color: #475467;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.lcb_spinner .lcb_bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.lcb_spinner .lcb_bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
 }
 
 @media only screen and (min-width: 1200px) {

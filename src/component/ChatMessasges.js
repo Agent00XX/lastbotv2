@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import { SingleImg } from "./SingleImg";
 import ImageViewer from "react-simple-image-viewer";
 import { Interweave } from "interweave";
@@ -49,7 +49,6 @@ const initialAskByBot = [
 
 const getBotResponse = (userMessage) => {
 	// Simple switch statement for bot responses
-	console.log("🚀 ~ ():", userMessage, userMessage.toLowerCase());
 	switch (userMessage.toLowerCase()) {
 		case "help me choose a kitchen":
 			return "To help you find the perfect kitchen style for your home, let's begin by discussing your personal taste.Among Scandinavian, Farmhouse, and Modern styles, do you find yourself gravitating towards a particular one?";
@@ -73,7 +72,11 @@ export const ChatMessasges = ({
 	inputMessage,
 	setInputMessage,
 	widgetInfo,
-	scrollRef
+	scrollRef,
+	setFocus,
+	isFetching,
+	threadInfos,
+	showInitialMessages
 }) => {
 	const [showImagePage, setShowImagePage] = useState("");
 	const [singleImageData, setsingleImageData] = useState({});
@@ -114,6 +117,142 @@ export const ChatMessasges = ({
 		}
 	}, [message.length]);
 
+	const renderMessages = (messages = []) => {
+		return messages.map(({ humanJoined, label, contents, role, metadata }, index) => {
+			return (
+				<Fragment key={index}>
+					{role === "assistant" || role === 'human' ? (
+						role === 'human' && humanJoined ? <div className="lcb_humanJoinedContainer">
+							<p className="lcb_lineForNewJoined"></p>
+							<p className="lcb_labelForNewJoined">{label}</p>
+						</div> : <Fragment>
+							{metadata?.data?.length > 0 && metadata?.type === 'images' && <div className="lcb_sender-conataoner" style={{ padding: 10 }}>
+								<div className="lcb_user-avatar">{widgetInfo?.initials}</div>
+								{metadata.type === 'images' && <div className="lcb_wrapperOfBotInitials">
+									{metadata.data.length > 0 && (
+										<div
+											className="lcb_image-container lcb_chat-bubble"
+											style={{ marginBottom: 16 }}
+										>
+											{metadata.data.map((curr, idx) => (
+												<div
+													key={idx}
+													className="lcb_image-wrapper"
+													onClick={() => {
+														openImageViewer(idx)
+													}}
+												>
+													<img src={curr.image_url} alt={curr.image_alt} />
+													<h6 className="lcb_img-title">{curr.image_title}</h6>
+												</div>
+
+											))}
+											{isViewerOpen && (
+												<ImageViewer
+													src={metadata.data.map(s => s.image_url)}
+													currentIndex={currentImage}
+													onClose={closeImageViewer}
+													disableScroll={false}
+													backgroundStyle={{
+														backgroundColor: "rgba(0,0,0,0.9)"
+													}}
+													closeOnClickOutside={true}
+												/>
+											)}
+										</div>
+									)}
+								</div>}
+							</div>}
+							<div className="lcb_sender-conataoner">
+								{/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" /> */}
+								<div style={{ visibility: metadata.type === 'images' ? "hidden" : "visible" }} className="lcb_user-avatar">{widgetInfo?.initials}</div>
+								<p className={`lcb_chat-bubble   ${getClassName(role)} `}>
+									<Interweave content={contents} />
+								</p>
+							</div>
+							{metadata?.data?.length > 0 && metadata?.type !== 'images' && <div 
+								className="lcb_sender-conataoner" 
+								style={{ padding: 10, display: metadata.type === 'options' ? "none" : "" }}
+							>
+								{/* {index === (message?.length - 1) && metadata?.data?.length > 0 && <div className="lcb_sender-conataoner"> */}
+								<img style={{ visibility: 'hidden' }} src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" />
+								{/* {(metadata.type === 'options') && <div className="lcb_wrapperOfBotInitials">
+									{metadata.data.filter(s => typeof s !== "string").map((s, idx) => {
+										return <div
+											key={idx}
+											className="image-wrapper"
+											onClick={() => openImageViewer(idx)}
+										>
+											<img className="lcb_imageWithText" src={s.image_url} alt={s.image_alt} />
+											<h6 className="lcb_img-title2">{s.image_title}</h6>
+										</div>
+									})}
+									{isViewerOpen && (
+										<ImageViewer
+											src={metadata.data.filter(s => typeof s !== "string").map(s => s.image_url)}
+											currentIndex={currentImage}
+											onClose={closeImageViewer}
+											disableScroll={false}
+											backgroundStyle={{
+												backgroundColor: "rgba(0,0,0,0.9)"
+											}}
+											closeOnClickOutside={true}
+										/>
+									)}
+									{metadata.data.filter(s => typeof s == "string").map((s, idx) => {
+										return <div key={idx} className="lcb_botInitialMessage" onClick={() => {
+											setInputMessage(s)
+											setFocus()
+										}}>{s}</div>
+									})}
+								</div>} */}
+
+
+								{metadata.type === 'products' && <div className="lcb_wrapperOfBotInitials">
+									{metadata.data.length > 0 && (
+										<div
+											className="lcb_image-container lcb_chat-bubble"
+											style={{ marginBottom: 16 }}
+										>
+											{metadata.data.map((curr, idx) => (
+												<div
+													key={idx}
+													className="lcb_image-wrapper"
+													onClick={() => {
+														setShowImagePage(curr.name);
+														setsingleImageData(curr);
+													}}
+												>
+													<img src={curr.images[0].url} alt={curr.images[0].alt} />
+													<h6 className="lcb_img-title">{curr.name}</h6>
+													<h6 className="lcb_img-text">{curr.short_description}</h6>
+												</div>
+
+											))}
+										</div>
+									)}
+								</div>}
+
+								{metadata.type === 'links' && <div className="lcb_wrapperOfBotInitials">
+									{metadata.data.map(s => {
+										return <a key={s.title} className="lcb_botLinks" target={s.target} href={s.url} >{s.title}</a>
+									})}
+								</div>}
+							</div>}
+						</Fragment>
+					) : (
+						<div
+							key={index}
+							className={`lcb_chat-bubble ${getClassName(role)}`}
+						>
+							<p>{contents}</p>
+						</div>
+					)}
+				</Fragment>
+			)
+		})
+	}
+
 	return (
 		<>
 			{!showImagePage && (
@@ -124,178 +263,62 @@ export const ChatMessasges = ({
 					}
 					ref={scrollRef}
 				>
-					{message.map(({ humanJoined, label, contents, role, metadata }, index) => {
-						return (
-							<>
-								{role === "assistant" || role === 'human' ? (
-									role === 'human' && humanJoined ? <div className="lcb_humanJoinedContainer">
-										<p className="lcb_lineForNewJoined"></p>
-										<p className="lcb_labelForNewJoined">{label}</p>
-									</div> : <>
-										<div className="lcb_sender-conataoner">
-											{/* <img src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" /> */}
-											<div className="lcb_user-avatar">{widgetInfo?.initials}</div>
-											<p className={`lcb_chat-bubble   ${getClassName(role)} `}>
-												<Interweave content={contents} />
-											</p>
-										</div>
-										{metadata?.data?.length > 0 && <div className="lcb_sender-conataoner">
-											{/* {index === (message?.length - 1) && metadata?.data?.length > 0 && <div className="lcb_sender-conataoner"> */}
-											<img style={{ visibility: 'hidden' }} src={"https://agent00xx.github.io/lastbotv2/assets/Images/Logo.png"} alt="user-avatar" className="lcb_user-avatar" />
-											{(metadata.type === 'options' || metadata.type === 'images') && <div className="lcb_wrapperOfBotInitials">
-												{metadata.data.filter(s => typeof s !== "string").map((s, idx) => {
-													return <div
-														key={idx}
-														className="image-wrapper"
-														onClick={() => openImageViewer(idx)}
-													>
-														<img className="lcb_imageWithText" src={s.image_url} alt={s.image_alt} />
-														<h6 className="lcb_img-title2">{s.image_title}</h6>
-													</div>
-												})}
-												{console.log("shshsh, ", metadata.data.filter(s => typeof s !== "string"))}
-												{isViewerOpen && (
-													<ImageViewer
-														src={metadata.data.filter(s => typeof s !== "string").map(s => s.image_url)}
-														currentIndex={currentImage}
-														onClose={closeImageViewer}
-														disableScroll={false}
-														backgroundStyle={{
-															backgroundColor: "rgba(0,0,0,0.9)"
-														}}
-														closeOnClickOutside={true}
-													/>
-												)}
-												{metadata.data.filter(s => typeof s == "string").map((s, idx) => {
+					<div>
+						{threadInfos.length > 0 && threadInfos.map((s, index) => {
 
-													return <div className="lcb_botInitialMessage" onClick={() => setInputMessage(s)}>{s}</div>
-												})}
-											</div>}
+							return <Fragment key={index}>
+								<div className="lcb_humanJoinedContainer">
+									<p className="lcb_lineForNewJoined"></p>
+									<p className="lcb_labelForNewJoined">{s.title}</p>
+								</div>
 
+								{index !== (threadInfos.length - 1) && renderMessages(s.messages)}
+							</Fragment>
+						})}
+						{/* Render current messages */}
+						{renderMessages(message)}
+					</div>
 
-											{metadata.type === 'products' && <div className="lcb_wrapperOfBotInitials">
-												{metadata.data.length > 0 && (
-													<div
-														className="image-container chat-bubble"
-														style={{ marginBottom: 16 }}
-													>
-														{metadata.data.map((curr, idx) => (
-															<div
-																key={idx}
-																className="image-wrapper"
-																onClick={() => {
-																	setShowImagePage(curr.name);
-																	setsingleImageData(curr);
-																}}
-															>
-																<img src={curr.images[0].url} alt={curr.images[0].alt} />
-																<h6 className="lcb_img-title">{curr.name}</h6>
-																<h6 className="lcb_img-text">{curr.short_description}</h6>
-															</div>
+					<div>
 
-														))}
-													</div>
-												)}
-												{/* {metadata.data.map(s => {
-												return <div className="lcb_botInitialMessage" onClick={() => setInputMessage(s)}>{s}</div>
-											})} */}
-											</div>}
-											{metadata.type === 'links' && <div className="lcb_wrapperOfBotInitials">
-												{metadata.data.map(s => {
-													return <a className="lcb_botLinks" target={s.target} href={s.url} >{s.title}</a>
-												})}
-											</div>}
-										</div>}
-										{/* Images sended by BOT */}
-										{/* {images.length > 0 && (
-										<div
-											className="image-container chat-bubble"
-											style={{ marginBottom: 16 }}
-										>
-											{images.map((cur, idx) => (
-												<>
-													<div
-														className="image-wrapper"
-														onClick={() => {
-															setShowImagePage(cur.title);
-															setsingleImageData(cur);
-														}}
-													>
-														<img src={cur.img} alt="Image 1" />
-														<h6 className="lcb_img-title">{cur.title}</h6>
-														<h6 className="lcb_img-text">{cur.text}</h6>
-													</div>
-												</>
-											))}
-										</div>
-									)} */}
-									</>
-								) : (
-									<div
-										key={index}
-										className={`lcb_chat-bubble ${getClassName(role)}`}
-									// onClick={() => selectServiceHandler(message)}
-									>
-										<p>{contents}</p>
-									</div>
-								)}
-							</>
-						)
-					})}
-
-					{/* Initial ask by BOT */}
-					{/* {message.length === 1 && (
-						<div className="lcb_convoByBotWrapper">
-							<p className="lcb_askQue">
-								<img
-									src={"https://agent00xx.github.io/lastbotv2/assets/Images/Askanythinginany.png"}
-									alt="user-avatar"
-									width={"274px"}
-								/>
-							</p>
-							{initialAskByBot.map((s) => (
-								<p
-									className="lcb_botInitialMessage"
-									key={s.id}
-									onClick={() => {
-										setMessage((prev) => [
-											...prev,
-											{ type: "bot", message: s.message },
-										]);
-
-										setTimeout(() => {
-											const botResponse = getBotResponse(s.message.toLowerCase());
-											if(s.message.toLowerCase() === "i want to speak to a human"){
-												setIsHuman(true)
-											}
-											setMessage((prev) => [
-												...prev,
-												// {
-												// 	type: s.message.toLowerCase() === "i want to speak to a human" ? "human" : "user",
-												// 	humanJoined: true,
-												// 	label: "Mari joined"
-												// },
-												{
-													type: s.message.toLowerCase() === "i want to speak to a human" ? "human" : "user",
-													message: botResponse,
-													img: s.message.toLowerCase() === "i want to speak to a human" ? "./assets/Images/HumanAvatar.png" : "./assets/Images/Logo.png",
-													images:
-														s.message.toLowerCase() ===
-															"help me choose a kitchen"
-															? chatImgData
-															: [],
-												},
-											]);
-										}, 500);
-									}}
-								>
-									{s.message}
+						{/* Initial ask by BOT */}
+						{showInitialMessages.length > 0 && (
+							<div className="lcb_convoByBotWrapper" style={{marginTop: 30}}>
+								<p className="lcb_askQue">
+									<img
+										src={"https://agent00xx.github.io/lastbotv2/assets/Images/Askanythinginany.png"}
+										alt="user-avatar"
+										width={"274px"}
+									/>
 								</p>
-							))}
-						</div>
-					)} */}
+								{showInitialMessages.map((s) => (
+									<p
+										className="lcb_botInitialMessage"
+										key={s}
+										onClick={() => {
+											setInputMessage(prev => {
+												return prev ? `${prev}, ${s}` : s
+											})
+											setFocus()
+										}}
+									>
+										{s}
+									</p>
+								))}
+							</div>
+						)}
 
-					<div className="lcb_to-scroll-div" ref={ref} />
+						{isFetching && <div className="lcb_sender-conataoner" style={{ alignItems: 'center' }}>
+							<div className="lcb_user-avatar">{widgetInfo?.initials}</div>
+							<div class="lcb_spinner">
+								<div class="lcb_bounce1"></div>
+								<div class="lcb_bounce2"></div>
+								<div class="lcb_bounce3"></div>
+							</div></div>}
+
+						<div className="lcb_to-scroll-div" ref={ref} />
+					</div>
+
 				</div>
 			)}
 			{showImagePage && (
