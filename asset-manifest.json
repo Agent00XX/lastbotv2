@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lastbotv2/static/css/main.bf15fa1b.css",
-    "main.js": "/lastbotv2/static/js/main.fa2f3241.js",
+    "main.js": "/lastbotv2/static/js/main.41ea81b7.js",
     "index.html": "/lastbotv2/index.html",
     "main.bf15fa1b.css.map": "/lastbotv2/static/css/main.bf15fa1b.css.map",
-    "main.fa2f3241.js.map": "/lastbotv2/static/js/main.fa2f3241.js.map"
+    "main.41ea81b7.js.map": "/lastbotv2/static/js/main.41ea81b7.js.map"
   },
   "entrypoints": [
     "static/css/main.bf15fa1b.css",
-    "static/js/main.fa2f3241.js"
+    "static/js/main.41ea81b7.js"
   ]
 }
